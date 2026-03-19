@@ -1,0 +1,234 @@
+/* ================= NAVBAR ================= */
+.navbar {
+  background-color: #fefefe;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f1f1f1;
+  transition: all 0.3s ease;
+}
+
+/* ================= LOGO ================= */
+.logo {
+  height: 45px;
+  object-fit: contain;
+}
+
+/* ================= NAV LINKS ================= */
+.navLink {
+  font-weight: 500;
+  color: #053e99;
+  margin: 0 14px;
+  position: relative;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-top: none;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background: linear-gradient(90deg, #1264bb, #3a90d4);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navLink:hover {
+  color: #1264bb;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* ================= COUNTRY BUTTON ================= */
+.countryBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid #e5e5e5;
+  background: #ffffff;
+  border-radius: 25px;
+  font-weight: 500;
+  color: #053e99;
+  transition: all 0.3s ease;
+}
+
+.countryBtn:hover {
+  background: #f0f6ff;
+  border-color: #1264bb;
+  box-shadow: 0 4px 14px rgba(18, 100, 187, 0.15);
+}
+
+/* ================= MOBILE COUNTRY ================= */
+.countryBtnMobileTop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: #f5f9ff;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #053e99;
+}
+
+/* ================= FLAG ================= */
+.flag {
+  width: 20px;
+  height: 14px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+/* ================= DROPDOWN MENU ================= */
+.dropdownMenu {
+  border-radius: 14px;
+  padding: 8px;
+  border: none;
+  margin-top: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  animation: dropdownFade 0.25s ease;
+}
+
+/* ================= DROPDOWN ITEM ================= */
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 500;
+  color: #053e99;
+  transition: all 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background: #f0f6ff;
+  color: #1264bb;
+}
+
+/* ================= LOGIN BUTTON (DESKTOP) ================= */
+.loginBtn {
+  border-radius: 10px;
+  padding: 8px 34px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #70ac10, #4a7c0a);
+  border: none;
+  color: #fff;
+  letter-spacing: 0.4px;
+
+  /* Premium glow */
+  box-shadow: 0 4px 14px rgba(112, 172, 16, 0.35);
+
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect */
+.loginBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.loginBtn:hover::before {
+  left: 125%;
+}
+
+.loginBtn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 22px rgba(112, 172, 16, 0.45);
+}
+
+/* ================= LOGIN BUTTON (MOBILE TOP) ================= */
+.loginBtnMobileTop {
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #70ac10, #4a7c0a);
+  border: none;
+  color: white;
+}
+
+/* ================= MOBILE LOGIN TEXT ================= */
+.mobileLogin {
+  font-weight: 500;
+  color: #053e99;
+  text-decoration: none;
+}
+
+/* ================= MOBILE RIGHT ================= */
+.mobileRight {
+  margin-left: auto;
+}
+
+/* ================= MOBILE MENU ================= */
+/* .mobileMenu {
+  margin-top: 12px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+} */
+
+/* ================= MOBILE NAV LINKS ================= */
+.mobileNavLink {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #053e99;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.mobileNavLink:hover {
+  background: #f0f6ff;
+  transform: translateX(4px);
+}
+
+/* ================= REMOVE DEFAULT ARROW ================= */
+:global(.dropdown-toggle::after) {
+  display: none !important;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 991px) {
+  .navLink {
+    margin: 1px 0;
+    font-size: 16px;
+  }
+
+  .dropdownMenu {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobileRight {
+    display: none !important;
+  }
+}
+
+/* ================= ANIMATION ================= */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
