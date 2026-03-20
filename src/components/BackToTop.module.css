@@ -1,0 +1,58 @@
+/* ================= BUTTON ================= */
+.btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #70ac10, #3a90d4);
+  color: #fff;
+  font-size: 16px;
+
+  box-shadow: 0 8px 25px rgba(58,144,212,0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+/* SHOW */
+.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* HOVER */
+.btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 12px 35px rgba(58,144,212,0.6);
+}
+
+/* ICON */
+.btn svg {
+  font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 576px) {
+  .btn {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+}

@@ -1,3 +1,84 @@
+/* ================= TOP BAR ================= */
+.topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+
+  background: linear-gradient(90deg, #053e99, #1264bb);
+  color: #fff;
+
+  padding: 6px 0;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+/* ================= NAVBAR SHIFT ================= */
+.navbar {
+  top: 32px;
+}
+
+/* ================= SPACING ================= */
+.headerSpace {
+  height: 110px;
+}
+
+/* ================= MARQUEE ================= */
+.marquee {
+  overflow: hidden;
+}
+
+.track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: scrollLeft 18s linear infinite;
+}
+
+.track span {
+  padding-right: 60px;
+}
+
+.track a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.track a:hover {
+  color: #70ac10;
+}
+/* FULL BAR CLICKABLE */
+.topBarLink {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* hover effect */
+.topBarLink:hover {
+  color: #70ac10;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes scrollLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 576px) {
+  .navbar {
+    top: 30px;
+  }
+
+  .headerSpace {
+    height: 100px;
+  }
+}
+
+
+
 /* ================= NAVBAR ================= */
 .navbar {
   background-color: #fefefe;
