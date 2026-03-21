@@ -2,7 +2,7 @@
 .wrapper {
   position: relative;
   isolation: isolate;
-  padding: 100px 0;
+  padding: 80px 0;
   background: linear-gradient(180deg, #fefefe, #eef5ff);
   overflow: hidden;
 }

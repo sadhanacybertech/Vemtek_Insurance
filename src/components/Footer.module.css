@@ -15,7 +15,7 @@
 
 /* ================= FOOTER ================= */
 .footer {
-  background: linear-gradient(180deg, #e0e4ea, #eaf2ff);
+  /* background: linear-gradient(180deg, #e0e4ea, #eaf2ff); */
   padding: 70px 0 25px;
   position: relative;
   border-top: 1px solid rgb(232, 221, 221);
