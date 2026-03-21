@@ -50,11 +50,7 @@ function Header() {
                 📞 +91 8423811106 • Get a Free Consultation •
               </span>
 
-              <span>
-                🛡️ Trusted by Thousands for Reliable Insurance Solutions •
-                Health • Life • Family Protection •
-                📞 Speak with an Expert • Start Your Plan Today •
-              </span>
+             
 
             </div>
           </div>

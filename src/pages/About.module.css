@@ -1,0 +1,1097 @@
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
+
+  /* 🔥 Animated gradient */
+  background: linear-gradient(-45deg, #0b3d2e, #0e5a43, #053e99, #1264bb);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* ================= GRADIENT ANIMATION ================= */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= GEOMETRIC PATTERN ================= */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: 
+    linear-gradient(120deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(240deg, rgba(255,255,255,0.05) 25%, transparent 25%);
+    
+  background-size: 80px 80px;
+
+  opacity: 0.4;
+
+  /* 🔥 pattern movement */
+  animation: patternMove 20s linear infinite;
+}
+
+/* PATTERN ANIMATION */
+@keyframes patternMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-80px); }
+}
+
+/* ================= GLOW EFFECT ================= */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #70ac10;
+  filter: blur(120px);
+  opacity: 0.2;
+  top: -100px;
+  left: -100px;
+
+  animation: float 6s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(30px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ================= CONTENT ================= */
+.content {
+  position: relative;
+  z-index: 2;
+
+  /* ✨ fade + slide animation */
+  animation: fadeUp 1s ease forwards;
+}
+
+/* TEXT ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= HEADING ================= */
+.content h1 {
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+
+  background: linear-gradient(90deg, #fff, #cfe6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= UNDERLINE ================= */
+.line {
+  width: 120px;
+  height: 3px;
+  margin: 15px auto 25px;
+  background: linear-gradient(90deg, #70ac10, #3a90d4);
+  border-radius: 2px;
+
+  animation: linePulse 2s ease-in-out infinite;
+}
+
+/* LINE ANIMATION */
+@keyframes linePulse {
+  0% { transform: scaleX(1); opacity: 0.7; }
+  50% { transform: scaleX(1.2); opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0.7; }
+}
+
+/* ================= CTA BUTTON ================= */
+.cta {
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* 🔥 SHINE EFFECT */
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: 0.6s;
+}
+
+.cta:hover::before {
+  left: 120%;
+}
+
+/* HOVER */
+.cta:hover {
+  background: linear-gradient(135deg, #70ac10, #3a90d4);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(58,144,212,0.4);
+}
+
+/* ================= SCROLL ICON ================= */
+.scroll {
+  position: absolute;
+  bottom: 50px;
+  font-size: 30px;
+  color: #ddd;
+
+  animation: bounce 1.5s infinite;
+}
+
+/* BOUNCE */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .content h1 {
+    font-size: 42px;
+  }
+
+  .cta {
+    font-size: 18px;
+    padding: 14px 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .hero {
+    height: 75vh;
+  }
+
+  .content h1 {
+    font-size: 28px;
+  }
+
+  .line {
+    width: 80px;
+  }
+
+  .cta {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
+}
+
+
+
+
+
+
+
+/* ================= WRAPPER ================= */
+.mvWrapper {
+  padding: 70px 0;
+  background: #f8fbff;
+  position: relative;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* ================= HEADING ================= */
+.heading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.heading h2 {
+  font-size: 45px;
+  font-weight: 800;
+  color: #053e99;
+  position: relative;
+}
+
+.heading h2::after {
+  content: "";
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #70ac10, #3a90d4);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+
+.heading p {
+  margin-top: 15px;
+  color: #666;
+  font-size: 15px;
+}
+
+/* ================= GRID ================= */
+.mvGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+/* ================= CARD ================= */
+.mvBox {
+  position: relative;
+  background: #ffffff;
+  padding: 35px 28px;
+  border-radius: 20px;
+
+  border: 1px solid #eef2f7;
+
+  overflow: hidden;
+  transition: all 0.4s ease;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+/* ✨ GLOW BACKGROUND */
+.mvBox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, #3a90d4, transparent 60%);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+/* ✨ SHINE EFFECT */
+.mvBox::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.4);
+  transform: skewX(-25deg);
+  transition: 0.6s;
+}
+
+/* ================= HOVER ================= */
+.mvBox:hover {
+  transform: translateY(-10px) scale(1.02);
+
+  /* 🔥 Light glowing border */
+  border: 1px solid rgba(58,144,212,0.4);
+
+  /* 🔥 Outer glow */
+  box-shadow:
+    0 20px 50px rgba(58,144,212,0.18),
+    0 0 0 3px rgba(58,144,212,0.08);
+}
+
+.mvBox:hover::before {
+  opacity: 0.12;
+}
+
+.mvBox:hover::after {
+  left: 130%;
+}
+
+/* ================= ICON ================= */
+.iconBox {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  color: #fff;
+
+  background: linear-gradient(135deg, #70ac10, #1264bb);
+  margin-bottom: 18px;
+
+  transition: 0.4s;
+}
+
+/* icon animation */
+.mvBox:hover .iconBox {
+  transform: rotate(8deg) scale(1.1);
+  box-shadow: 0 10px 30px rgba(58,144,212,0.4);
+}
+
+/* ================= TITLE ================= */
+.mvBox h3 {
+  font-size: 20px;
+  color: #053e99;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.mvBox:hover h3 {
+  color: #1264bb;
+}
+
+/* ================= TEXT ================= */
+.mvBox p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* ================= LIST ================= */
+.mvBox ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mvBox ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #444;
+
+  transition: 0.3s;
+}
+
+/* list hover */
+.mvBox ul li:hover {
+  transform: translateX(5px);
+  color: #053e99;
+}
+
+.mvBox ul li svg {
+  color: #70ac10;
+  font-size: 13px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .mvGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heading h2 {
+    font-size: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .mvWrapper {
+    padding: 70px 0;
+  }
+
+  .heading h2 {
+    font-size: 24px;
+  }
+
+  .heading p {
+    font-size: 14px;
+  }
+
+  .mvBox {
+    padding: 22px 18px;
+  }
+
+  .mvBox h3 {
+    font-size: 18px;
+  }
+}
+
+
+
+/* ================= SECTION ================= */
+.valuesSection {
+  padding: 70px 0;
+  background: linear-gradient(180deg, #fefefe, #f4f9ff);
+  position: relative;
+}
+
+/* soft glow */
+.valuesSection::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #3a90d4;
+  filter: blur(120px);
+  opacity: 0.08;
+  top: -80px;
+  /* right: -80px; */
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= HEADING ================= */
+.heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.heading h2 {
+  font-size: 45px;
+  font-weight: 800;
+  color: #053e99;
+  position: relative;
+  line-height: 1.2;
+}
+
+/* underline */
+.heading h2::after {
+  content: "";
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #70ac10, #3a90d4);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+
+.heading p {
+  margin-top: 15px;
+  color: #666;
+  font-size: 15px;
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* ================= GRID ================= */
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* ================= CARD ================= */
+.valueCard {
+  background: #fff;
+  padding: 32px 20px;
+  border-radius: 18px;
+  text-align: center;
+
+  border: 1px solid #eef2f7;
+
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+/* glow bg */
+.valueCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, #3a90d4, transparent 60%);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+/* shine */
+.valueCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.4);
+  transform: skewX(-25deg);
+  transition: 0.6s;
+}
+
+/* hover */
+.valueCard:hover {
+  transform: translateY(-10px);
+  border: 1px solid rgba(58,144,212,0.4);
+
+  box-shadow:
+    0 20px 50px rgba(58,144,212,0.15),
+    0 0 0 3px rgba(58,144,212,0.06);
+}
+
+.valueCard:hover::before {
+  opacity: 0.12;
+}
+
+.valueCard:hover::after {
+  left: 130%;
+}
+
+/* ================= ICON ================= */
+.iconBox {
+  width: 65px;
+  height: 65px;
+  margin: auto;
+  margin-bottom: 15px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  color: #fff;
+
+  background: linear-gradient(135deg, #70ac10, #1264bb);
+
+  box-shadow: 0 8px 20px rgba(58,144,212,0.25);
+  transition: 0.4s;
+}
+
+/* icon hover */
+.valueCard:hover .iconBox {
+  transform: scale(1.15) rotate(6deg);
+  box-shadow: 0 12px 30px rgba(58,144,212,0.4);
+}
+
+/* ================= TEXT ================= */
+.valueCard h4 {
+  font-size: 17px;
+  color: #053e99;
+  margin-bottom: 8px;
+}
+
+.valueCard p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Large Tablet (992px - 1200px) */
+@media (max-width: 1200px) {
+  .valuesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .valuesSection {
+    padding: 70px 0;
+  }
+
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .heading h2 {
+    font-size: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .valuesSection {
+    padding: 60px 0;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .heading h2 {
+    font-size: 24px;
+  }
+
+  .heading p {
+    font-size: 14px;
+  }
+
+  .valueCard {
+    padding: 24px 18px;
+  }
+
+  .iconBox {
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
+  }
+
+  .valueCard h4 {
+    font-size: 16px;
+  }
+
+  .valueCard p {
+    font-size: 13.5px;
+  }
+}
+
+
+
+
+
+/* ================= SECTION ================= */
+.medicareSection {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #fefefe, #eef5ff);
+  position: relative;
+  overflow: hidden;
+  border-top:1px solid #cfe6ff;
+}
+
+/* background glow 1 */
+.medicareSection::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #3a90d4;
+  filter: blur(130px);
+  opacity: 0.08;
+  top: -120px;
+  left: -120px;
+}
+
+/* background glow 2 */
+.medicareSection::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #70ac10;
+  filter: blur(120px);
+  opacity: 0.07;
+  bottom: -120px;
+  right: -120px;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ================= CONTENT ================= */
+.content {
+  position: relative;
+}
+
+.content h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #053e99;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+/* underline accent */
+.content h2::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, #70ac10, #3a90d4);
+  display: block;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.content p {
+  font-size: 13.5px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #70ac10, #3a90d4);
+  color: #fff;
+  border: none;
+  padding: 15px 34px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 10px 30px rgba(58,144,212,0.35);
+}
+
+/* shine effect */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: 0.6s;
+}
+
+.btn:hover::before {
+  left: 120%;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 15px 40px rgba(58,144,212,0.6);
+}
+
+/* ================= IMAGE ================= */
+.imageBox {
+  position: relative;
+}
+
+/* glow behind image */
+.imageBox::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background: linear-gradient(135deg, #70ac10, #3a90d4);
+  filter: blur(25px);
+  opacity: 0.15;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+/* image */
+.imageBox img {
+  width: 100%;
+  border-radius: 20px;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+  transition: all 0.5s ease;
+}
+
+/* hover */
+.imageBox:hover img {
+  transform: scale(1.05) rotate(0.5deg);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Large Tablet */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .medicareSection {
+    padding: 80px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .content h2 {
+    font-size: 32px;
+  }
+
+  .content h2::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .medicareSection {
+    padding: 60px 0;
+  }
+
+  .content h2 {
+    font-size: 24px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+
+  .imageBox img {
+    border-radius: 14px;
+  }
+}
+
+
+
+/* ================= SECTION ================= */
+.ctaSection {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #f8fbff, #eef5ff);
+  position: relative;
+  overflow: hidden;
+}
+
+/* background glow */
+.ctaSection::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: #3a90d4;
+  filter: blur(120px);
+  opacity: 0.1;
+  top: -80px;
+  left: -80px;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= CTA BOX ================= */
+.ctaBox {
+  position: relative;
+  border-radius: 24px;
+  padding: 85px 45px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  background: linear-gradient(135deg, #154a9e, #1264bb);
+  color: #fff;
+
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(18,100,187,0.3);
+}
+
+/* inner glow */
+.ctaBox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, #70ac10, transparent 60%);
+  opacity: 0.15;
+}
+
+/* ================= CONTENT ================= */
+.ctaContent {
+  flex: 1;
+}
+
+.ctaContent h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.ctaContent p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #e6ecff;
+  margin-bottom: 16px;
+}
+
+/* ================= FEATURES ================= */
+.ctaFeatures {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.ctaFeatures span {
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.12);
+}
+
+/* ================= SMALL NOTE ================= */
+.smallNote {
+  font-size: 12.5px;
+  color: #cfd8ff;
+}
+
+/* ================= ACTIONS ================= */
+.ctaActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 260px;
+  width: 260px; /* 👈 FIXED WIDTH FOR EQUAL BUTTONS */
+}
+
+/* ================= COMMON BUTTON ================= */
+.primaryBtn,
+.secondaryBtn {
+  width: 100%;              /* 👈 SAME WIDTH */
+  height: 48px;             /* 👈 SAME HEIGHT */
+  border-radius: 50px;
+  font-size: 14.5px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ================= PRIMARY ================= */
+.primaryBtn {
+  background: linear-gradient(135deg, #70ac10, #4a7c0a);
+  border: none;
+  color: #fff;
+
+  box-shadow: 0 8px 25px rgba(112,172,16,0.35);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(112,172,16,0.5);
+}
+
+/* ================= SECONDARY ================= */
+.secondaryBtn {
+  background: #fff;
+  border: 2px solid #fff;
+  color: #053e99;
+}
+
+.secondaryBtn:hover {
+  background: transparent;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Large Tablet */
+@media (max-width: 1200px) {
+  .ctaBox {
+    gap: 30px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .ctaBox {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 25px;
+  }
+
+  .ctaActions {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .ctaContent h2 {
+    font-size: 28px;
+  }
+
+  .ctaFeatures {
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .ctaSection {
+    padding: 70px 0;
+  }
+
+  .ctaContent h2 {
+    font-size: 22px;
+  }
+
+  .ctaContent p {
+    font-size: 14px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    height: 44px;
+    font-size: 14px;
+  }
+}

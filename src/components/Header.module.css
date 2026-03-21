@@ -1,3 +1,12 @@
+/* ================= ROOT COLORS ================= */
+:root {
+  --primary: #053e99;
+  --secondary: #1264bb;
+  --accent: #3a90d4;
+  --green: #70ac10;
+  --white: #ffffff;
+}
+
 /* ================= TOP BAR ================= */
 .topBar {
   position: fixed;
@@ -6,22 +15,31 @@
   width: 100%;
   z-index: 1050;
 
-  background: linear-gradient(90deg, #053e99, #1264bb);
-  color: #fff;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: var(--white);
 
   padding: 6px 0;
   font-size: 13px;
   overflow: hidden;
+  cursor: pointer;
 }
 
-/* ================= NAVBAR SHIFT ================= */
-.navbar {
-  top: 32px;
+/* glow line */
+.topBar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
 }
 
-/* ================= SPACING ================= */
-.headerSpace {
-  height: 110px;
+/* ================= CLICKABLE ================= */
+.topBarLink {
+  display: block;
+  color: var(--white);
+  text-decoration: none;
 }
 
 /* ================= MARQUEE ================= */
@@ -32,32 +50,34 @@
 .track {
   display: inline-flex;
   white-space: nowrap;
-  animation: scrollLeft 18s linear infinite;
+  animation: scrollLeft 20s linear infinite;
 }
 
 .track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
   padding-right: 60px;
+  font-weight: 500;
 }
 
+/* links */
 .track a {
-  color: #fff;
-  margin: 0 10px;
+  color: var(--white);
   text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .track a:hover {
-  color: #70ac10;
-}
-/* FULL BAR CLICKABLE */
-.topBarLink {
-  display: block;
-  color: #fff;
-  text-decoration: none;
+  color: var(--green);
 }
 
-/* hover effect */
-.topBarLink:hover {
-  color: #70ac10;
+/* ✅ PAUSE ON HOVER */
+.topBar:hover .track,
+.topBarLink:hover .track {
+  animation-play-state: paused;
+  color: white;
 }
 
 /* ================= ANIMATION ================= */
@@ -66,25 +86,18 @@
   100% { transform: translateX(-100%); }
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 576px) {
-  .navbar {
-    top: 30px;
-  }
-
-  .headerSpace {
-    height: 100px;
-  }
-}
-
-
-
 /* ================= NAVBAR ================= */
 .navbar {
+  top: 32px;
   background-color: #fefefe;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #f1f1f1;
   transition: all 0.3s ease;
+}
+
+/* ================= SPACING ================= */
+.headerSpace {
+  height: 110px;
 }
 
 /* ================= LOGO ================= */
@@ -96,14 +109,13 @@
 /* ================= NAV LINKS ================= */
 .navLink {
   font-weight: 500;
-  color: #053e99;
+  color: var(--primary);
   margin: 0 14px;
   position: relative;
   transition: all 0.3s ease;
   letter-spacing: 0.3px;
   text-transform: uppercase;
   font-size: 14px;
-  border-top: none;
 }
 
 .navLink::after {
@@ -113,13 +125,12 @@
   height: 2px;
   bottom: -6px;
   left: 0;
-  background: linear-gradient(90deg, #1264bb, #3a90d4);
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
   transition: width 0.3s ease;
-  border-radius: 2px;
 }
 
 .navLink:hover {
-  color: #1264bb;
+  color: var(--secondary);
 }
 
 .navLink:hover::after {
@@ -133,16 +144,16 @@
   gap: 8px;
   padding: 6px 16px;
   border: 1px solid #e5e5e5;
-  background: #ffffff;
+  background: #fff;
   border-radius: 25px;
   font-weight: 500;
-  color: #053e99;
-  transition: all 0.3s ease;
+  color: var(--primary);
+  transition: 0.3s;
 }
 
 .countryBtn:hover {
   background: #f0f6ff;
-  border-color: #1264bb;
+  border-color: var(--secondary);
   box-shadow: 0 4px 14px rgba(18, 100, 187, 0.15);
 }
 
@@ -156,7 +167,7 @@
   padding: 6px 10px;
   border-radius: 20px;
   font-size: 14px;
-  color: #053e99;
+  color: var(--primary);
 }
 
 /* ================= FLAG ================= */
@@ -167,17 +178,16 @@
   object-fit: cover;
 }
 
-/* ================= DROPDOWN MENU ================= */
+/* ================= DROPDOWN ================= */
 .dropdownMenu {
   border-radius: 14px;
   padding: 8px;
   border: none;
   margin-top: 10px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
   animation: dropdownFade 0.25s ease;
 }
 
-/* ================= DROPDOWN ITEM ================= */
 .dropdownItem {
   display: flex;
   align-items: center;
@@ -185,34 +195,30 @@
   border-radius: 10px;
   padding: 10px 12px;
   font-weight: 500;
-  color: #053e99;
-  transition: all 0.2s ease;
+  color: var(--primary);
+  transition: 0.2s;
 }
 
 .dropdownItem:hover {
   background: #f0f6ff;
-  color: #1264bb;
+  color: var(--secondary);
 }
 
-/* ================= LOGIN BUTTON (DESKTOP) ================= */
+/* ================= LOGIN BUTTON ================= */
 .loginBtn {
   border-radius: 10px;
-  padding: 8px 34px;
+  padding: 8px 30px;
   font-weight: 600;
-  background: linear-gradient(135deg, #70ac10, #4a7c0a);
+  background: linear-gradient(135deg, var(--green), #4a7c0a);
   border: none;
   color: #fff;
-  letter-spacing: 0.4px;
 
-  /* Premium glow */
-  box-shadow: 0 4px 14px rgba(112, 172, 16, 0.35);
-
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(112,172,16,0.35);
+  transition: 0.3s;
   position: relative;
   overflow: hidden;
 }
 
-/* Shine effect */
 .loginBtn::before {
   content: "";
   position: absolute;
@@ -220,7 +226,7 @@
   left: -75%;
   width: 50%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,0.2);
   transform: skewX(-25deg);
   transition: 0.5s;
 }
@@ -230,26 +236,19 @@
 }
 
 .loginBtn:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 22px rgba(112, 172, 16, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(112,172,16,0.45);
 }
 
-/* ================= LOGIN BUTTON (MOBILE TOP) ================= */
+/* ================= MOBILE BUTTON ================= */
 .loginBtnMobileTop {
   border-radius: 10px;
   padding: 6px 14px;
   font-size: 14px;
   font-weight: 600;
-  background: linear-gradient(135deg, #70ac10, #4a7c0a);
+  background: linear-gradient(135deg, var(--green), #4a7c0a);
   border: none;
-  color: white;
-}
-
-/* ================= MOBILE LOGIN TEXT ================= */
-.mobileLogin {
-  font-weight: 500;
-  color: #053e99;
-  text-decoration: none;
+  color: #fff;
 }
 
 /* ================= MOBILE RIGHT ================= */
@@ -257,21 +256,14 @@
   margin-left: auto;
 }
 
-/* ================= MOBILE MENU ================= */
-/* .mobileMenu {
-  margin-top: 12px;
-  border-top: 1px solid #eee;
-  padding-top: 10px;
-} */
-
-/* ================= MOBILE NAV LINKS ================= */
+/* ================= MOBILE NAV ================= */
 .mobileNavLink {
   padding: 12px;
   font-size: 16px;
   font-weight: 500;
-  color: #053e99;
+  color: var(--primary);
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition: 0.2s;
 }
 
 .mobileNavLink:hover {
@@ -279,7 +271,7 @@
   transform: translateX(4px);
 }
 
-/* ================= REMOVE DEFAULT ARROW ================= */
+/* ================= REMOVE ARROW ================= */
 :global(.dropdown-toggle::after) {
   display: none !important;
 }
@@ -287,12 +279,40 @@
 /* ================= RESPONSIVE ================= */
 @media (max-width: 991px) {
   .navLink {
-    margin: 1px 0;
+    margin: 4px 0;
     font-size: 16px;
   }
 
   .dropdownMenu {
     width: 100%;
+  }
+
+  .navbar {
+    top: 30px;
+  }
+
+  .headerSpace {
+    height: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .topBar {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+
+  .track span {
+    gap: 15px;
+    padding-right: 40px;
+  }
+
+  .navbar {
+    top: 28px;
+  }
+
+  .headerSpace {
+    height: 95px;
   }
 }
 
