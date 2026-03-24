@@ -419,7 +419,7 @@
 /* ================= GRID ================= */
 .gridd {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
@@ -469,8 +469,8 @@
 
 /* ================= ICON ================= */
 .icon {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   margin: 0 auto 20px;
   border-radius: 20px;
 
@@ -493,7 +493,7 @@
 
 /* ================= TEXT ================= */
 .card h4 {
-  font-size: 20px;
+  font-size: 18px;
   color: #053e99;
   margin-bottom: 12px;
 }

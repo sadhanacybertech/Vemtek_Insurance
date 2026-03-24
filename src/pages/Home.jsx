@@ -1,7 +1,7 @@
 import styles from "./Home.module.css";
 import heroImg from "../assets/vemtek-hero-img.jpeg";
 import shields from "../assets/floating-shields.png";
-import { FaBook, FaChartLine, FaCheckCircle, FaClipboardList, FaHeadset, FaHeart, FaPhoneAlt, FaPlus, FaSearch, FaShieldAlt, FaShoppingCart, FaUserCog, FaUsers, FaWallet } from "react-icons/fa";
+import { FaBook, FaChartLine, FaCheckCircle, FaClipboardList, FaHeadset, FaHeart, FaHeartbeat, FaPhoneAlt, FaPlus, FaSearch, FaShieldAlt, FaShoppingCart, FaUserCog, FaUsers, FaWallet } from "react-icons/fa";
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -52,9 +52,14 @@ function Home() {
     },
     {
       icon: <FaBook />,
-      title: "Life Insurance & Final Expense",
+      title: "Life Insurance",
       desc: "Protect your loved ones from unexpected expenses with final expense insurance."
-    }
+    },
+   {
+  icon: <FaHeartbeat />,
+  title: "Final Expense Insurance",
+  desc: "Ease the financial burden on your family by covering funeral and end-of-life expenses with simple and affordable plans."
+}
   ];
 
 
@@ -107,7 +112,7 @@ function Home() {
 
   const client = [
     {
-      text: "Secure Future Coverage made enrolling in Medicare simple. I finally felt supported.",
+      text: "Vemtek Insurance made enrolling in Medicare simple. I finally felt supported.",
       name: "James P.",
       role: "Medicare Client",
       img: "https://randomuser.me/api/portraits/men/32.jpg"
