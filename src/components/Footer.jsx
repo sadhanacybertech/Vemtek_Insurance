@@ -15,19 +15,15 @@ import logo from "../assets/Vemtek-insurance-logo.jpeg";
 
 function Footer() {
   return (
-    <footer className={styles.footer} >
+    <footer className={styles.footer}>
       <Container>
 
         <Row className="gy-5">
 
           {/* ABOUT */}
-          <Col lg={4} md={6}>
+          <Col lg={3} md={6}>
             <div className={styles.logoBox}>
-              <img
-                src={logo}
-                alt="Vemtek Insurance Logo"
-                loading="lazy"
-              />
+              <img src={logo} alt="Vemtek Insurance Logo" loading="lazy" />
             </div>
 
             <p className={styles.text}>
@@ -37,43 +33,30 @@ function Footer() {
             </p>
 
             {/* SOCIAL */}
+             <strong className="text-muted" style={{fontSize:"14px"}}>Connect With Us:</strong>
             <div className={styles.social}>
-              <a href="#" aria-label="Facebook">
-                <img src={facebook} alt="Facebook icon" />
-              </a>
-
-              <a href="#" aria-label="Instagram">
-                <img src={instagram} alt="Instagram icon" />
-              </a>
-
-              <a href="#" aria-label="LinkedIn">
-                <img src={linkedin} alt="LinkedIn icon" />
-              </a>
-
-              <a href="#" aria-label="Twitter">
-                <img src={twitter} alt="Twitter icon" />
-              </a>
+             
+              <a href="#"><img src={facebook} alt="Facebook" /></a>
+              <a href="#"><img src={instagram} alt="Instagram" /></a>
+              <a href="#"><img src={linkedin} alt="LinkedIn" /></a>
+              <a href="#"><img src={twitter} alt="Twitter" /></a>
             </div>
           </Col>
 
           {/* QUICK LINKS */}
           <Col lg={2} md={6}>
             <h5 className={styles.heading}>Quick Links</h5>
-
-            <nav aria-label="Footer navigation">
-              <ul className={styles.links}>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/services">Services</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-              </ul>
-            </nav>
+            <ul className={styles.links}>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
           </Col>
 
           {/* SERVICES */}
-          <Col lg={3} md={6}>
+          <Col lg={2} md={6}>
             <h5 className={styles.heading}>Our Services</h5>
-
             <ul className={styles.links}>
               <li>Life Insurance</li>
               <li>Health Insurance</li>
@@ -82,27 +65,41 @@ function Footer() {
             </ul>
           </Col>
 
+          {/* ✅ NEW POLICIES SECTION */}
+          <Col lg={2} md={6}>
+            <h5 className={styles.heading}>Policies</h5>
+            <ul className={styles.links}>
+              <li><Link to="/termscondition">Terms of Use</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/HIPPA-Notice">HIPPA Notice</Link></li>
+              <li><Link to="/Legal-Notice">Legal Notice</Link></li>
+              <li><Link to="/Non-Descrimination-notice">Non-Discrimination Notice</Link></li>
+            </ul>
+          </Col>
+
           {/* CONTACT */}
           <Col lg={3} md={6}>
             <h5 className={styles.heading}>Contact Us</h5>
 
             <address className={styles.contactBox}>
-              
               <p>
-                <img src={location} alt="Location icon" loading="lazy" />
-                <span>Lucknow, India</span>
+                <img src={location} alt="Location" />
+                <span>
+                  <strong>Regitered Office:</strong> <br />
+                  Vemtek LLC, 7 White Deer Ct
+                  Huntington, New York, 11743
+                </span>
               </p>
 
               <p>
-                <img src={phone} alt="Phone icon" loading="lazy" />
-                <a href="tel:+918423811106">+91 8423811106</a>
+                <img src={phone} alt="Phone" />
+                <a href="tel:+15165185065">+1 516-518-5065</a>
               </p>
 
               <p>
-                <img src={mail} alt="Email icon" loading="lazy" />
+                <img src={mail} alt="Email" />
                 <a href="mailto:info@vemtek.com">info@vemtek.com</a>
               </p>
-
             </address>
           </Col>
 

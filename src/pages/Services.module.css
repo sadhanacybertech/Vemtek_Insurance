@@ -1,47 +1,47 @@
 /* ================= SECTION ================= */
 .section {
-  padding: 70px 0 80px;
-  background: linear-gradient(135deg, #eef5ff, #f4fbf7);
+  padding: 80px 0 90px;
+  background: linear-gradient(135deg, #eef5ff, #f7fbff);
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-/* animated glow */
+/* softer glow */
 .section::before {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 420px;
+  height: 420px;
   background: #70ac10;
   filter: blur(140px);
-  opacity: 0.15;
-  top: -150px;
-  left: -150px;
-  animation: floatGlow 8s ease-in-out infinite alternate;
+  opacity: 0.12;
+  top: -120px;
+  left: -120px;
+  animation: floatGlow 10s ease-in-out infinite alternate;
 }
 
 .section::after {
   content: "";
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   background: #3a90d4;
   filter: blur(120px);
-  opacity: 0.12;
-  bottom: -120px;
-  right: -120px;
-  animation: floatGlow 10s ease-in-out infinite alternate;
+  opacity: 0.10;
+  bottom: -100px;
+  right: -100px;
+  animation: floatGlow 12s ease-in-out infinite alternate;
 }
 
 @keyframes floatGlow {
   from { transform: translateY(0); }
-  to { transform: translateY(30px); }
+  to { transform: translateY(25px); }
 }
 
 /* ================= CONTAINER ================= */
 .container {
-  max-width: 1100px;
+  max-width: 1050px;
   margin: auto;
   padding: 0 20px;
   position: relative;
@@ -50,10 +50,11 @@
 
 /* ================= HEADING ================= */
 .heading {
-  font-size: 52px;
-  font-weight: 900;
+  font-size: 46px;
+  font-weight: 800;
   color: #053e99;
-  line-height: 1.2;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
 }
 
 /* highlight */
@@ -62,55 +63,56 @@
   color: #2f7d1c;
 }
 
-/* premium highlight */
+/* refined highlight */
 .heading span::before {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 8px;
+  bottom: 6px;
   width: 100%;
-  background: linear-gradient(90deg, #70ac10, #b6e388);
+  height: 10px;
+  /* background: linear-gradient(90deg, #70ac10, #b6e388); */
   z-index: -1;
   border-radius: 6px;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 /* ================= SUBTEXT ================= */
 .subtext {
-  margin-top: 20px;
-  font-size: 17px;
+  margin-top: 14px;
+  font-size: 16px;
   color: #555;
-  max-width: 720px;
+  max-width: 680px;
   margin-inline: auto;
   line-height: 1.7;
 }
 
 /* ================= BUTTONS ================= */
 .actions {
-  margin-top: 35px;
+  margin-top: 32px;
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 /* common */
 .primaryBtn,
 .secondaryBtn {
-  height: 52px;
-  min-width: 210px;
+  height: 50px;
+  min-width: 200px;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 
-  border-radius: 50px;
-  font-size: 15px;
+  border-radius: 40px;
+  font-size: 14.5px;
   font-weight: 600;
   cursor: pointer;
 
-  transition: all 0.35s ease;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -121,7 +123,7 @@
   color: #fff;
   border: none;
 
-  box-shadow: 0 10px 30px rgba(5,62,153,0.3);
+  box-shadow: 0 8px 25px rgba(5,62,153,0.25);
 }
 
 /* shine */
@@ -129,7 +131,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: -70%;
+  left: -80%;
   width: 50%;
   height: 100%;
   background: rgba(255,255,255,0.25);
@@ -142,30 +144,30 @@
 }
 
 .primaryBtn:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(5,62,153,0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(5,62,153,0.35);
 }
 
 /* ================= SECONDARY ================= */
 .secondaryBtn {
-  background: rgba(255,255,255,0.6);
-  border: 2px solid #053e99;
+  background: rgba(255,255,255,0.7);
+  border: 1.5px solid #053e99;
   color: #053e99;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
 }
 
 .secondaryBtn:hover {
   background: #053e99;
   color: #fff;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 /* ================= STATS ================= */
 .stats {
-  margin-top: 60px;
+  margin-top: 55px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 18px;
 }
 
 /* stat card */
@@ -175,41 +177,43 @@
   justify-content: center;
   gap: 10px;
 
-  padding: 18px 15px;
-  border-radius: 14px;
+  padding: 16px 14px;
+  border-radius: 12px;
 
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(6px);
 
   border: 1px solid #e6edf7;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
 
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 /* hover */
 .stat:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(58,144,212,0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(58,144,212,0.12);
 }
 
 /* icon */
 .stat svg {
-  font-size: 22px;
+  font-size: 20px;
   color: #053e99;
 }
 
 /* number */
 .stat h4 {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: #053e99;
+  margin: 0;
 }
 
 /* text */
 .stat p {
-  font-size: 13px;
+  font-size: 12.5px;
   color: #666;
+  margin: 0;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -217,7 +221,7 @@
 /* Tablet */
 @media (max-width: 992px) {
   .heading {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .stats {
@@ -228,11 +232,11 @@
 /* Mobile */
 @media (max-width: 576px) {
   .section {
-    padding: 70px 0 50px;
+    padding: 65px 0 50px;
   }
 
   .heading {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .subtext {
@@ -242,19 +246,18 @@
   .primaryBtn,
   .secondaryBtn {
     width: 100%;
-    max-width: 260px;
+    max-width: 240px;
   }
 
   .stats {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 14px;
   }
 
   .stat {
     padding: 14px;
   }
 }
-
 
 
 
@@ -311,7 +314,7 @@
 /* ================= HEADING ================= */
 .heading {
   text-align: center;
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
 }
 
 .heading h2 {

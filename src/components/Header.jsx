@@ -45,9 +45,9 @@ function Header() {
             <div className={styles.track}>
 
               <span>
-                🛡️ Secure Your Future with Vemtek Insurance •
+                 Secure Your Future with Vemtek Insurance •
                 Expert Guidance | Tailored Coverage Plans •
-                📞 +91 8423811106 • Get a Free Consultation •
+                +1 516-518-5065 • Get a Free Consultation •
               </span>
 
              

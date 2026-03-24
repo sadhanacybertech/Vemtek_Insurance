@@ -232,13 +232,13 @@ function About() {
           {/* RIGHT ACTIONS */}
           <div className={styles.ctaActions}>
 
-            <Link to="/contact">
+            <Link to="/contact" className="text-decoration-none">
               <button className={styles.primaryBtn}>
                 <HiOutlineCalendarDays /> Get Free Consultation
               </button>
             </Link>
 
-            <a href="tel:+918423811106">
+            <a href="tel:+1 516-518-5065" className="text-decoration-none">
               <button className={styles.secondaryBtn}>
                 <FaPhoneAlt /> Call an Expert
               </button>

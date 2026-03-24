@@ -162,9 +162,10 @@ function Home() {
           <div className={styles.shieldWrapper}>
             <img src={shields} alt="Protection Shield" />
           </div>
-
-          {/* CTA Button */}
-          <button className={styles.btn}>
+          <button
+            className={styles.btn}
+            onClick={() => window.location.href = "tel:+15165185065"}
+          >
             Call Expert Now →
           </button>
         </div>
@@ -280,7 +281,7 @@ function Home() {
 
           {/* CTA */}
           <div className={styles.cta}>
-            <a href="tel:+918423811106" className={styles.ctaBtn}>
+            <a href="tel:++1 516-518-5065" className={styles.ctaBtn}>
               <FaPhoneAlt />
               Talk to an Expert
             </a>
@@ -416,7 +417,7 @@ function Home() {
             </Link>
 
             {/* CALL BUTTON */}
-            <a href="tel:+918423811106" className={styles.secondaryBtn}>
+            <a href="tel:+1 516-518-5065" className={styles.secondaryBtn}>
               <FaPhoneAlt />
               Call Now
             </a>

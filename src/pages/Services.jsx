@@ -250,7 +250,7 @@ function Services() {
               More About Us
             </Link>
 
-            <a href="tel:+918423811106" className={styles.secondaryBtn}>
+            <a href="tel:+1 516-518-5065" className={styles.secondaryBtn}>
               <FaPhoneAlt /> Call Us Now
             </a>
           </div>
