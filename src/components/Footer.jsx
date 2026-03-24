@@ -18,7 +18,7 @@ function Footer() {
     <footer className={styles.footer}>
       <Container>
 
-        <Row className="gy-5">
+        <Row className="gy-5 align-items-start">
 
           {/* ABOUT */}
           <Col lg={3} md={6}>
@@ -32,14 +32,23 @@ function Footer() {
               confidence.
             </p>
 
-            {/* SOCIAL */}
-             <strong className="text-muted" style={{fontSize:"14px"}}>Connect With Us:</strong>
-            <div className={styles.social}>
-             
-              <a href="#"><img src={facebook} alt="Facebook" /></a>
-              <a href="#"><img src={instagram} alt="Instagram" /></a>
-              <a href="#"><img src={linkedin} alt="LinkedIn" /></a>
-              <a href="#"><img src={twitter} alt="Twitter" /></a>
+            <div className={styles.socialWrap}>
+              <span className={styles.socialTitle}>Connect With Us</span>
+
+              <div className={styles.social}>
+                <a href="#" aria-label="Facebook">
+                  <img src={facebook} alt="Facebook" />
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <img src={instagram} alt="Instagram" />
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <img src={linkedin} alt="LinkedIn" />
+                </a>
+                <a href="#" aria-label="Twitter">
+                  <img src={twitter} alt="Twitter" />
+                </a>
+              </div>
             </div>
           </Col>
 
@@ -65,7 +74,7 @@ function Footer() {
             </ul>
           </Col>
 
-          {/* ✅ NEW POLICIES SECTION */}
+          {/* POLICIES */}
           <Col lg={2} md={6}>
             <h5 className={styles.heading}>Policies</h5>
             <ul className={styles.links}>
@@ -85,8 +94,8 @@ function Footer() {
               <p>
                 <img src={location} alt="Location" />
                 <span>
-                  <strong>Regitered Office:</strong> <br />
-                  Vemtek LLC, 7 White Deer Ct
+                  <strong>Registered Office:</strong><br />
+                  Vemtek LLC, 7 White Deer Ct<br />
                   Huntington, New York, 11743
                 </span>
               </p>
