@@ -102,7 +102,22 @@ function Footer() {
 
               <p>
                 <img src={phone} alt="Phone" />
-                <a href="tel:+15165185065">+1 516-518-5065</a>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+
+                    const confirmCall = window.confirm(
+                      "Calling this number will connect you with a licensed insurance agent.\nCalls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+                    );
+
+                    if (confirmCall) {
+                      window.location.href = "tel:+15165185065";
+                    }
+                  }}
+                >
+                  +1 516-518-5065
+                </a>
               </p>
 
               <p>
@@ -129,6 +144,34 @@ function Footer() {
             >
               Sadhana Cybertech (OPC) Pvt. Ltd.
             </a>
+          </p>
+        </div>
+
+        {/* ✅ Legal Entity */}
+        <div className={styles.legal}>
+          <p>
+            Vemtek Insurance is operated by Vemtek LLC, a licensed insurance
+            agency in the United States.
+          </p>
+        </div>
+
+        {/* ✅ TPMO DISCLAIMER */}
+        <div className={styles.tpmo}>
+          <p>
+            We do not offer every plan available in your area. Currently we represent 6 organizations which offer 25 products in your area. Please contact {" "}
+            <a
+              href="https://www.medicare.gov"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Medicare.gov
+            </a>
+            , 1-800-MEDICARE, or your local State Health Insurance Program (SHIP)
+            to get information on all of your options.
+          </p>
+
+          <p>
+            Vemtek Insurance is a marketing brand of Vemtek LLC, a licensed insurance agency. This website is a solicitation for insurance.
           </p>
         </div>
 

@@ -164,7 +164,15 @@ function Home() {
           </div>
           <button
             className={styles.btn}
-            onClick={() => window.location.href = "tel:+15165185065"}
+            onClick={() => {
+              const confirmCall = window.confirm(
+                "Calling this number will connect you with a licensed insurance agent. Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+              );
+
+              if (confirmCall) {
+                window.location.href = "tel:+15165185065";
+              }
+            }}
           >
             Call Expert Now →
           </button>
@@ -278,13 +286,27 @@ function Home() {
               </div>
             ))}
           </div>
-
           {/* CTA */}
           <div className={styles.cta}>
-            <a href="tel:++1 516-518-5065" className={styles.ctaBtn}>
+            <a
+              href="#"
+              className={styles.ctaBtn}
+              onClick={(e) => {
+                e.preventDefault();
+
+                const confirmCall = window.confirm(
+                  "You will be connected with a licensed insurance agent.\nCalls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+                );
+
+                if (confirmCall) {
+                  window.location.href = "tel:+15165185065";
+                }
+              }}
+            >
               <FaPhoneAlt />
               Talk to an Expert
             </a>
+
           </div>
 
         </div>
@@ -417,11 +439,24 @@ function Home() {
             </Link>
 
             {/* CALL BUTTON */}
-            <a href="tel:+1 516-518-5065" className={styles.secondaryBtn}>
+            <a
+              href="#"
+              className={styles.secondaryBtn}
+              onClick={(e) => {
+                e.preventDefault();
+
+                const confirmCall = window.confirm(
+                  "Calling this number will connect you with a licensed insurance agent.\n Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+                );
+
+                if (confirmCall) {
+                  window.location.href = "tel:+15165185065";
+                }
+              }}
+            >
               <FaPhoneAlt />
               Call Now
             </a>
-
           </div>
 
         </div>

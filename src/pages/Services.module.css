@@ -262,12 +262,15 @@
 
 
 
+
+
 /* ================= SECTION ================= */
 .section {
   padding: 80px 0;
   background: linear-gradient(180deg, #f8fbff, #eef5ff);
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgb(237, 227, 227);
 }
 
 /* floating glow */
@@ -351,8 +354,9 @@
 /* ================= GRID ================= */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  margin-top: 30px;
 }
 
 /* ================= CARD ================= */
@@ -403,8 +407,8 @@
 
 /* ================= ICON ================= */
 .icon {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   margin: auto;
   margin-bottom: 20px;
 
@@ -414,7 +418,7 @@
   align-items: center;
   justify-content: center;
 
-  font-size: 30px;
+  font-size: 35px;
   color: #2f7d1c;
 
   background: linear-gradient(135deg, #eef5ff, #eaf7f1);
@@ -433,7 +437,7 @@
 
 /* ================= TEXT ================= */
 .card h4 {
-  font-size: 20px;
+  font-size: 18px;
   color: #053e99;
   margin-bottom: 10px;
   font-weight: 700;
@@ -502,6 +506,10 @@
     font-size: 24px;
   }
 }
+
+
+
+
 
 
 

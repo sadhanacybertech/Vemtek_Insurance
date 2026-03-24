@@ -20,7 +20,21 @@ function Contact() {
           </p>
 
           <div className={styles.actions}>
-            <a href="tel:+1 516-518-5065" className={styles.primaryBtn}>
+            <a
+              href="#"
+              className={styles.primaryBtn}
+              onClick={(e) => {
+                e.preventDefault();
+
+                const confirmCall = window.confirm(
+                  "Calling this number will connect you with a licensed insurance agent. \n Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+                );
+
+                if (confirmCall) {
+                  window.location.href = "tel:+15165185065";
+                }
+              }}
+            >
               <FaPhoneAlt /> Call Now
             </a>
 
@@ -40,9 +54,29 @@ function Contact() {
         {/* URGENT BOX */}
         <div className={styles.urgent}>
           <h3><PiWarningBold /> Need Urgent Help?</h3>
-          <p>
-            Call us now: <a href="tel:+1 516-518-5065">+1 516-518-5065</a> – Available 24/7
+
+          <p className="text-white">
+            Call us now:{" "}
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+
+                const confirmCall = window.confirm(
+                  "Calling this number will connect you with a licensed insurance agent. Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+                );
+
+                if (confirmCall) {
+                  window.location.href = "tel:+15165185065";
+                }
+              }}
+            >
+              +1 516-518-5065
+            </a>{" "}
+            – Available 24/7
           </p>
+
+
         </div>
 
       </section>
@@ -75,12 +109,32 @@ function Contact() {
             {/* PHONE */}
             <div className={styles.card}>
               <span className={`${styles.badge} ${styles.blue}`}>Available</span>
-              <div className={styles.icon}><FaPhoneAlt /></div>
+
+              <div className={styles.icon}>
+                <FaPhoneAlt />
+              </div>
+
               <h4>Phone Support</h4>
-              <a href="tel:+15165185065" style={{ textDecoration: "none" }}>
+
+              <a href="tel:+15165185065" className={styles.phoneLink}>
                 <p><b>+1 516-518-5065</b></p>
-                <button>Call Now</button>
               </a>
+
+              <button
+                className={styles.callBtn}
+                onClick={() => {
+                  const confirmCall = window.confirm(
+                    "Calling this number will connect you with a licensed insurance agent. Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+                  );
+
+                  if (confirmCall) {
+                    window.location.href = "tel:+15165185065";
+                  }
+                }}
+              >
+                Call Now
+              </button>
+
             </div>
 
             {/* AGENTS */}

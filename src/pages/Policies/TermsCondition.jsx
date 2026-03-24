@@ -73,7 +73,7 @@ export default function TermsConditions() {
 
                         <li>
                            <span className="fw-bold" style={{fontSize:"14px"}}> Voice-Enabled Devices:</span>
-                            <p>If you enable the Secure Future Coverage skill on a voice-enabled device
+                            <p>If you enable the Vemtek Insurance skill on a voice-enabled device
                                 (like an Amazon Echo or Google Home), you are authorizing us to disclose
                                 your information, including PHI, to the device manager (e.g., Amazon or Google). Once disclosed,
                                 your information will be governed by the device manager's terms and may no longer

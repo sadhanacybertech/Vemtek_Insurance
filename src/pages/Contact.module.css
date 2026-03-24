@@ -427,6 +427,43 @@
 
   transition: all 0.3s ease;
 }
+/* phone link */
+.phoneLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* button */
+.callBtn {
+  margin-top: 10px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #053e99, #1264bb);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.callBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(5,62,153,0.3);
+}
+
+/* compliance text */
+.callNote {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+
+  background: #f9fbff;
+  padding: 8px 10px;
+  border-left: 3px solid #053e99;
+  border-radius: 6px;
+}
 
 /* hover */
 .card button:hover {

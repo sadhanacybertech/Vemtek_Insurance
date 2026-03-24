@@ -45,7 +45,7 @@ export default function LegalNotice() {
         <section className={styles.card}>
           <h2>2. Ownership of Content</h2>
           <p>
-            All of the materials on this website belong to Secure Future Coverage or our content partners.
+            All of the materials on this website belong to Vemtek Insurance or our content partners.
             This includes articles, guides, design elements, images, videos, and logos. Intellectual property laws protect this content.
           </p>
 
@@ -66,7 +66,7 @@ export default function LegalNotice() {
             <li>Do not attempt to harm, disable, or disrupt the site’s functionality.</li>
             <li>Do not introduce viruses, malware, or harmful software.</li>
             <li>Do not collect or scrape data from the site without permission.</li>
-            <li>Do not misrepresent yourself as a Secure Future Coverage employee or agent.</li>
+            <li>Do not misrepresent yourself as a Vemtek Insurance employee or agent.</li>
           </ul>
           <p>We reserve the right to restrict or block access to any individual who misuses the site or violates these rules.</p>
         </section>
@@ -126,7 +126,7 @@ export default function LegalNotice() {
         <section className={styles.card}>
           <h2>8. Limitation of Liability</h2>
           <p>
-            To the fullest extent permitted by law, Secure Future Coverage is not liable for damages or losses that may
+            To the fullest extent permitted by law, Vemtek Insurance is not liable for damages or losses that may
             result from your use of this website. This includes:
           </p>
 
@@ -211,7 +211,7 @@ export default function LegalNotice() {
         <section className={styles.card}>
           <h2>15. Entire Agreement</h2>
           <p>
-            This Legal Notice represents the entire agreement between you and Secure Future Coverage regarding the use of this
+            This Legal Notice represents the entire agreement between you and Vemtek Insurance regarding the use of this
             website. It replaces any prior agreements or understandings, whether written or verbal, on the subject of site use.</p>
         </section>
 
@@ -233,7 +233,7 @@ export default function LegalNotice() {
 
         <section className={styles.card}>
           <h2>17. Closing Statement</h2>
-          <p>At Secure Future Coverage, we believe that clarity builds trust. This Legal Notice exists not to 
+          <p>At Vemtek Insurance, we believe that clarity builds trust. This Legal Notice exists not to 
             create barriers but to ensure a safe, respectful, and transparent environment for everyone who visits our 
             site. By outlining your rights and responsibilities, we aim to create a balanced framework where both parties are protected.</p>
             <p>We thank you for taking the time to review this information. Your understanding and cooperation help us provide a better, more reliable experience.</p>

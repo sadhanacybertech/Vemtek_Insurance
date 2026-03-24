@@ -27,7 +27,7 @@ export default function HippaNotice() {
                         helping you understand your rights regarding that information.
                         We create a record of the care and services you receive and use your record to provide
                         services, to comply with certain legal requirements, and to bill for those services. This Notice applies to
-                        all records of your care and benefits created or retained by Secure Future Coverage,
+                        all records of your care and benefits created or retained by Vemtek Insurance,
                         whether made by our personnel or your personal doctor.
                     </p>
                 </section>
@@ -127,7 +127,7 @@ export default function HippaNotice() {
 
                         <li>
                             <span className={styles.bold}>Right to an Accounting of Disclosures:</span>
-                            <p>You may request a list of certain disclosures of your PHI made by Secure Future Coverage during a specified time period (up to six years prior to the request).</p>
+                            <p>You may request a list of certain disclosures of your PHI made by Vemtek Insurance during a specified time period (up to six years prior to the request).</p>
                         </li>
 
 
@@ -165,7 +165,7 @@ export default function HippaNotice() {
                     <h2>6.   Filing a Complaint or Reporting a Problem</h2>
                     <p>
                         If you believe your privacy rights have been violated, you may file a complaint
-                        with Secure Future Coverage or with the U.S. Department of Health and Human Services (HHS), Office for Civil Rights.
+                        with Vemtek Insurance or with the U.S. Department of Health and Human Services (HHS), Office for Civil Rights.
                     </p>
                 </section>
 

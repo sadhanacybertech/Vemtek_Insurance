@@ -177,10 +177,22 @@ function Services() {
               <div className={styles.icon}>
                 <FaBook />
               </div>
-              <h4>Life Insurance & Final Expense</h4>
+              <h4>Life Insurance</h4>
               <p>
-                Protect your loved ones from unexpected expenses with reliable
-                life insurance coverage.
+                Protect your loved ones financially with secure and reliable life
+                insurance coverage tailored to your needs.
+              </p>
+            </div>
+
+            {/* CARD 4 (UPDATED) */}
+            <div className={styles.card}>
+              <div className={styles.icon}>
+                <FaHeartbeat />
+              </div>
+              <h4>Final Expense Insurance</h4>
+              <p>
+                Ease the financial burden on your family by covering funeral and
+                end-of-life expenses with simple and affordable plans.
               </p>
             </div>
 
@@ -188,8 +200,6 @@ function Services() {
 
         </div>
       </section>
-
-
       <section className={styles.wrapperr}>
         <div className={styles.container}>
 
@@ -219,46 +229,56 @@ function Services() {
 
 
 
-       <section className={styles.wrapper}>
-      <div className={styles.container}>
+      <section className={styles.wrapper}>
+        <div className={styles.container}>
 
-        <div className={styles.box}>
+          <div className={styles.box}>
 
-          {/* LEFT */}
-          <div className={styles.left}>
-            <h2>
-              Ready to Secure Your <span>Health Coverage?</span>
-            </h2>
+            {/* LEFT */}
+            <div className={styles.left}>
+              <h2>
+                Ready to Secure Your <span>Health Coverage?</span>
+              </h2>
 
-            <p>
-              The right health insurance can make all the difference. At
-              <b> Vemtek Insurance</b>, we simplify the process and help you
-              find a plan that truly works for you and your family.
-            </p>
+              <p>
+                The right health insurance can make all the difference. At
+                <b> Vemtek Insurance</b>, we simplify the process and help you
+                find a plan that truly works for you and your family.
+              </p>
 
-            {/* FEATURES */}
-            <div className={styles.features}>
-              <span><FaCheckCircle /> Trusted by 10,000+</span>
-              <span><FaCheckCircle /> Expert Guidance</span>
-              <span><FaCheckCircle /> No Hidden Fees</span>
+              {/* FEATURES */}
+              <div className={styles.features}>
+                <span><FaCheckCircle /> Trusted by 10,000+</span>
+                <span><FaCheckCircle /> Expert Guidance</span>
+                <span><FaCheckCircle /> No Hidden Fees</span>
+              </div>
             </div>
-          </div>
 
-          {/* RIGHT */}
-          <div className={styles.right}>
-            <Link to="/about" className={styles.primaryBtn}>
-              More About Us
-            </Link>
+            {/* RIGHT */}
+            <div className={styles.right}>
+              <Link to="/about" className={styles.primaryBtn}>
+                More About Us
+              </Link>
+              <button
+                className={styles.secondaryBtn}
+                onClick={() => {
+                  const confirmCall = window.confirm(
+                    "Calling this number will connect you with a licensed insurance agent. \n Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+                  );
 
-            <a href="tel:+1 516-518-5065" className={styles.secondaryBtn}>
-              <FaPhoneAlt /> Call Us Now
-            </a>
+                  if (confirmCall) {
+                    window.location.href = "tel:+15165185065";
+                  }
+                }}
+              >
+                <FaPhoneAlt /> Call Us Now
+              </button>
+            </div>
+
           </div>
 
         </div>
-
-      </div>
-    </section>
+      </section>
 
     </>
   );

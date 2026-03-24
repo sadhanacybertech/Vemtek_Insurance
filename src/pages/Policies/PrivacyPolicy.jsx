@@ -310,6 +310,18 @@ export default function PrivacyPolicy() {
                     </div>
                 </section>
 
+
+                <section className={styles.card}>
+                    <h2>Third-Party Marketing Disclosure</h2>
+
+                    <div className={styles.disclaimerBox}>
+                        <p>
+                            Vemtek Insurance is a marketing website operated by Vemtek LLC, a licensed Third-Party Marketing
+                            Organization (TPMO). We may be compensated by insurance carriers for enrollments.
+                        </p>
+                    </div>
+                </section>
+
             </div>
         </div>
     );

@@ -34,7 +34,7 @@ export default function NonDiscrimination() {
                     <p>
                         Healthcare is a deeply personal matter, and the decisions you make about
                         coverage have long-term impacts on your well-being. That is why we are
-                        committed to ensuring that everyone who visits Secure Future Coverage whether
+                        committed to ensuring that everyone who visits Vemtek Insurance whether
                         online or through direct communication with our representatives has equal
                         access to the same level of care, information, and service
                     </p>
@@ -49,7 +49,7 @@ export default function NonDiscrimination() {
                     <h2>2. Federal Law Protections</h2>
                     <p>
                         Several important federal civil rights laws govern how organizations
-                        like Secure Future Coverage must treat individuals seeking healthcare-related services. These include:
+                        like Vemtek Insurance must treat individuals seeking healthcare-related services. These include:
                     </p>
 
                     <ul>
@@ -79,7 +79,7 @@ export default function NonDiscrimination() {
                 <section className={styles.card}>
                     <h2>3. Equal Access to Services</h2>
                     <p>
-                        When you reach out to Secure Future Coverage, you can expect to receive assistance
+                        When you reach out to Vemtek Insurance, you can expect to receive assistance
                         that is free from bias or preferential treatment. Whether you are requesting a
                         Medicare quote, reviewing plan options, or speaking directly with a licensed representative,
                         the service provided will always be based on your needs, not on personal characteristics
@@ -98,7 +98,7 @@ export default function NonDiscrimination() {
                     <p>
                         We understand that Medicare coverage can be complex, and navigating the details
                         can be especially challenging if English is not your primary language. To ensure that no one is excluded,
-                        Secure Future Coverage provides free language assistance services. These services
+                        Vemtek Insurance provides free language assistance services. These services
                         may include the availability of interpreters or translated materials.
                     </p>
 
@@ -129,7 +129,7 @@ export default function NonDiscrimination() {
                     <p>
                         Despite our best efforts, there may be situations where someone feels they
                         have been treated unfairly or denied access to services. If this happens, you have the
-                        right to file a complaint. Secure Future Coverage takes complaints very
+                        right to file a complaint. Vemtek Insurance takes complaints very
                         seriously and has a process in place to address them quickly and thoroughly.
                     </p>
 
@@ -202,7 +202,7 @@ export default function NonDiscrimination() {
 
                 <section className={styles.card}>
                     <h2>10. A Final Word</h2>
-                    <p>At Secure Future Coverage, we see every client as an individual with unique needs, backgrounds,
+                    <p>At Vemtek Insurance, we see every client as an individual with unique needs, backgrounds,
                         and circumstances. Our mission is to support you in making informed decisions about Medicare
                         coverage while ensuring you feel respected,
                         valued, and understood. Non-discrimination is more than a legal requirement for us; it is
