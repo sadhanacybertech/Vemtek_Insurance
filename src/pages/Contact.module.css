@@ -267,12 +267,12 @@
 
 
 
-
 /* ================= SECTION ================= */
 .supportSection {
-  padding: 70px 0;
+  padding: 80px 0;
   background: linear-gradient(180deg, #f9fbff, #f1f6ff);
   position: relative;
+  overflow: hidden;
 }
 
 /* soft glow */
@@ -285,6 +285,7 @@
   filter: blur(120px);
   opacity: 0.08;
   top: -100px;
+  left: -80px;
 }
 
 /* ================= CONTAINER ================= */
@@ -299,11 +300,11 @@
 /* ================= HEADING ================= */
 .heading {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 55px;
 }
 
 .heading h2 {
-  font-size: 45px;
+  font-size: 42px;
   color: #053e99;
   font-weight: 800;
   position: relative;
@@ -313,7 +314,7 @@
 /* underline */
 .heading h2::after {
   content: "";
-  width: 120px;
+  width: 100px;
   height: 3px;
   background: linear-gradient(90deg, #70ac10, #3a90d4);
   position: absolute;
@@ -324,7 +325,7 @@
 }
 
 .heading p {
-  margin-top: 10px;
+  margin-top: 12px;
   color: #666;
   font-size: 15px;
 }
@@ -333,30 +334,29 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 24px;
 }
 
 /* ================= CARD ================= */
 .card {
   background: #ffffff;
   border-radius: 18px;
-  padding: 35px 22px;
+  padding: 30px 20px;
   text-align: center;
 
   position: relative;
   overflow: hidden;
 
   border: 1px solid #e6edf7;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 
   transition: all 0.35s ease;
 }
 
-/* hover (light effect) */
 .card:hover {
   transform: translateY(-8px);
   border-color: #3a90d4;
-  box-shadow: 0 15px 40px rgba(58,144,212,0.12);
+  box-shadow: 0 18px 45px rgba(58,144,212,0.15);
 }
 
 /* ================= BADGE ================= */
@@ -369,9 +369,9 @@
   padding: 5px 10px;
   border-radius: 20px;
   color: #fff;
+  font-weight: 500;
 }
 
-/* softer colors */
 .green { background: #6cc070; }
 .blue { background: #5a9cff; }
 .dark { background: #3f6ed6; }
@@ -381,23 +381,24 @@
 .icon {
   width: 65px;
   height: 65px;
-  margin: auto;
-  margin-bottom: 15px;
-
+  margin: 0 auto 15px;
+  padding:15px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 45px;
+  font-size: 32px;
   color: #0d548a;
+  background: #eef5ff;
 
-  transition: 0.35s ease;
+  transition: all 0.35s ease;
 }
 
-/* hover icon */
 .card:hover .icon {
   transform: scale(1.12);
+  background: #053e99;
+  color: #fff;
 }
 
 /* ================= TEXT ================= */
@@ -405,35 +406,48 @@
   font-size: 18px;
   color: #053e99;
   margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .card p {
   font-size: 14px;
   color: #666;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  line-height: 1.5;
 }
 
-/* ================= BUTTON ================= */
-.card button {
+/* ================= COMMON BUTTON ================= */
+.actionBtn {
   background: #f2f6ff;
   color: #053e99;
   border: 1px solid #dce6f7;
-
-  padding: 1px 22px;
+  padding: 10px 20px;
   border-radius: 30px;
   font-size: 13.5px;
-  /* font-weight: 500; */
   cursor: pointer;
-
   transition: all 0.3s ease;
 }
-/* phone link */
-.phoneLink {
-  text-decoration: none;
-  color: inherit;
+
+.actionBtn:hover {
+  background: #053e99;
+  color: #fff;
+  border-color: #053e99;
+  box-shadow: 0 6px 18px rgba(5,62,153,0.2);
 }
 
-/* button */
+/* ================= PHONE LINK ================= */
+.phoneLink {
+  text-decoration: none;
+  color: #053e99;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.phoneLink:hover {
+  text-decoration: underline;
+}
+
+/* ================= CALL BUTTON ================= */
 .callBtn {
   margin-top: 10px;
   padding: 10px 18px;
@@ -444,7 +458,7 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .callBtn:hover {
@@ -452,7 +466,7 @@
   box-shadow: 0 8px 20px rgba(5,62,153,0.3);
 }
 
-/* compliance text */
+/* ================= CALL NOTE ================= */
 .callNote {
   margin-top: 10px;
   font-size: 12px;
@@ -463,14 +477,6 @@
   padding: 8px 10px;
   border-left: 3px solid #053e99;
   border-radius: 6px;
-}
-
-/* hover */
-.card button:hover {
-  background: #053e99;
-  color: #fff;
-  border-color: #053e99;
-  box-shadow: 0 6px 18px rgba(5,62,153,0.2);
 }
 
 /* ================= RESPONSIVE ================= */
@@ -488,6 +494,10 @@
 
 /* Mobile */
 @media (max-width: 576px) {
+  .supportSection {
+    padding: 60px 0;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }
@@ -501,10 +511,9 @@
   }
 
   .card {
-    padding: 5px 18px;
+    padding: 25px 18px;
   }
 }
-
 
 
 

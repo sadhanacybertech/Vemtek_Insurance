@@ -5,6 +5,17 @@ import { PiWarningBold } from "react-icons/pi";
 import Frequently_Asked_Question from "../components/Frequently-Asked-Question";
 
 function Contact() {
+  const handleCall = (number) => {
+    if (typeof window !== "undefined") {
+      const confirmCall = window.confirm(
+        "Calling this number will connect you with a licensed insurance agent.\nCalls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+      );
+
+      if (confirmCall) {
+        window.location.href = `tel:${number}`;
+      }
+    }
+  };
 
   return (
     <>
@@ -26,12 +37,14 @@ function Contact() {
               onClick={(e) => {
                 e.preventDefault();
 
-                const confirmCall = window.confirm(
-                  "Calling this number will connect you with a licensed insurance agent. \n Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
-                );
+                if (typeof window !== "undefined") {
+                  const confirmCall = window.confirm(
+                    "Calling this number will connect you with a licensed insurance agent.\n\nCalls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+                  );
 
-                if (confirmCall) {
-                  window.location.href = "tel:+15165185065";
+                  if (confirmCall) {
+                    window.location.href = "tel:+15165185065";
+                  }
                 }
               }}
             >
@@ -103,7 +116,7 @@ function Contact() {
               <div className={styles.icon}><FaComments /></div>
               <h4>Live Chat</h4>
               <p>Average response: <b>2 mins</b></p>
-              <button>Start Chat</button>
+              <button className={styles.actionBtn}>Start Chat</button>
             </div>
 
             {/* PHONE */}
@@ -116,25 +129,26 @@ function Contact() {
 
               <h4>Phone Support</h4>
 
-              <a href="tel:+15165185065" className={styles.phoneLink}>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCall("+15165185065");
+                }}
+                className={styles.phoneLink}
+              >
                 <p><b>+1 516-518-5065</b></p>
               </a>
 
               <button
+                type="button"
                 className={styles.callBtn}
-                onClick={() => {
-                  const confirmCall = window.confirm(
-                    "Calling this number will connect you with a licensed insurance agent. Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
-                  );
-
-                  if (confirmCall) {
-                    window.location.href = "tel:+15165185065";
-                  }
-                }}
+                onClick={() => handleCall("+15165185065")}
               >
                 Call Now
               </button>
 
+            
             </div>
 
             {/* AGENTS */}
@@ -143,7 +157,7 @@ function Contact() {
               <div className={styles.icon}><FaUserTie /></div>
               <h4>Licensed Agents</h4>
               <p>Professional guidance</p>
-              <button>Get Help</button>
+              <button className={styles.actionBtn}>Get Help</button>
             </div>
 
             {/* EMAIL */}
@@ -152,14 +166,12 @@ function Contact() {
               <div className={styles.icon}><FaEnvelope /></div>
               <h4>Email Us</h4>
               <p>info@vemtek.com</p>
-              <button>Email Now</button>
+              <button className={styles.actionBtn}>Email Now</button>
             </div>
 
           </div>
-
         </div>
       </section>
-
 
 
 

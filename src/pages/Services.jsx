@@ -88,7 +88,21 @@ function Services() {
               <FaLayerGroup /> View Core Plans
             </button>
 
-            <button className={styles.secondaryBtn}>
+            <button
+              type="button"
+              className={styles.secondaryBtn}
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  const confirmCall = window.confirm(
+                    "Calling this number will connect you with a licensed insurance agent. Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+                  );
+
+                  if (confirmCall) {
+                    window.location.href = "tel:+15165185065";
+                  }
+                }
+              }}
+            >
               <FaPhoneAlt /> Get Expert Help
             </button>
           </div>

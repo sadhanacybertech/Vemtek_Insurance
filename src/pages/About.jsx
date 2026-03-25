@@ -203,7 +203,6 @@ function About() {
 
       <section className={styles.ctaSection}>
         <div className={styles.container}>
-
           <div className={styles.ctaBox}>
 
             {/* LEFT CONTENT */}
@@ -216,14 +215,12 @@ function About() {
                 insurance simple, transparent, and stress-free.
               </p>
 
-              {/* TRUST POINTS */}
               <div className={styles.ctaFeatures}>
                 <span><GiCheckMark /> Trusted Advisors</span>
                 <span><GiCheckMark /> Personalized Coverage</span>
                 <span><GiCheckMark /> Quick & Easy Process</span>
               </div>
 
-              {/* SMALL TRUST NOTE */}
               <p className={styles.smallNote}>
                 No hidden charges • 100% confidential • Fast support
               </p>
@@ -231,7 +228,6 @@ function About() {
 
             {/* RIGHT ACTIONS */}
             <div className={styles.ctaActions}>
-
               <Link to="/contact" className="text-decoration-none">
                 <button className={styles.primaryBtn}>
                   <HiOutlineCalendarDays /> Get Free Consultation
@@ -239,14 +235,17 @@ function About() {
               </Link>
 
               <button
+                type="button"
                 className={styles.secondaryBtn}
                 onClick={() => {
-                  const confirmCall = window.confirm(
-                    "Calling this number will connect you with a licensed insurance agent. Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
-                  );
+                  if (typeof window !== "undefined") {
+                    const confirmCall = window.confirm(
+                      "Calling this number will connect you with a licensed insurance agent. Calls may be recorded for quality and compliance purposes.\n\nDo you want to continue?"
+                    );
 
-                  if (confirmCall) {
-                    window.location.href = "tel:+15165185065";
+                    if (confirmCall) {
+                      window.location.href = "tel:+15165185065";
+                    }
                   }
                 }}
               >
@@ -255,10 +254,8 @@ function About() {
             </div>
 
           </div>
-
         </div>
       </section>
-
 
     </>
   );

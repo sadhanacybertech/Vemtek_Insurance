@@ -892,7 +892,6 @@
 }
 
 
-
 /* ================= SECTION ================= */
 .ctaSection {
   padding: 100px 0;
@@ -909,7 +908,7 @@
   height: 350px;
   background: #3a90d4;
   filter: blur(120px);
-  opacity: 0.1;
+  opacity: 0.12;
   top: -80px;
   left: -80px;
 }
@@ -927,7 +926,7 @@
 .ctaBox {
   position: relative;
   border-radius: 24px;
-  padding: 85px 45px;
+  padding: 55px 45px;
 
   display: flex;
   justify-content: space-between;
@@ -938,7 +937,14 @@
   color: #fff;
 
   overflow: hidden;
-  box-shadow: 0 25px 70px rgba(18,100,187,0.3);
+  box-shadow: 0 25px 70px rgba(18, 100, 187, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* subtle hover lift */
+.ctaBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(18, 100, 187, 0.4);
 }
 
 /* inner glow */
@@ -948,6 +954,7 @@
   inset: 0;
   background: radial-gradient(circle at top right, #70ac10, transparent 60%);
   opacity: 0.15;
+  pointer-events: none;
 }
 
 /* ================= CONTENT ================= */
@@ -956,10 +963,10 @@
 }
 
 .ctaContent h2 {
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 800;
   margin-bottom: 12px;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .ctaContent p {
@@ -981,7 +988,10 @@
   font-size: 13px;
   padding: 6px 12px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 /* ================= SMALL NOTE ================= */
@@ -996,14 +1006,14 @@
   flex-direction: column;
   gap: 12px;
   min-width: 260px;
-  width: 260px; /* 👈 FIXED WIDTH FOR EQUAL BUTTONS */
+  width: 260px;
 }
 
 /* ================= COMMON BUTTON ================= */
 .primaryBtn,
 .secondaryBtn {
-  width: 100%;              /* 👈 SAME WIDTH */
-  height: 48px;             /* 👈 SAME HEIGHT */
+  width: 100%;
+  height: 48px;
   border-radius: 50px;
   font-size: 14.5px;
   font-weight: 600;
@@ -1022,13 +1032,12 @@
   background: linear-gradient(135deg, #70ac10, #4a7c0a);
   border: none;
   color: #fff;
-
-  box-shadow: 0 8px 25px rgba(112,172,16,0.35);
+  box-shadow: 0 8px 25px rgba(112, 172, 16, 0.35);
 }
 
 .primaryBtn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(112,172,16,0.5);
+  box-shadow: 0 12px 35px rgba(112, 172, 16, 0.5);
 }
 
 /* ================= SECONDARY ================= */

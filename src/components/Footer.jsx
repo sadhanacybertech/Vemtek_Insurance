@@ -135,7 +135,7 @@ function Footer() {
             © {new Date().getFullYear()} Vemtek Insurance. All rights reserved.
           </p>
 
-          <p className={styles.dev}>
+          {/* <p className={styles.dev}>
             Developed by{" "}
             <a
               href="https://sadhanacybertech.com"
@@ -144,7 +144,7 @@ function Footer() {
             >
               Sadhana Cybertech (OPC) Pvt. Ltd.
             </a>
-          </p>
+          </p> */}
         </div>
 
         {/* ✅ Legal Entity */}
