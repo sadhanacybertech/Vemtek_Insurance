@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Services.module.css";
 import { FaLayerGroup, FaPhoneAlt, FaUsers, FaHeadset, FaShieldAlt, FaCheckCircle, FaBook, FaShoppingCart, FaPlus, FaCalendarAlt, FaHandshake, FaTooth, FaLaptopMedical, FaCapsules, FaHeartbeat, FaBaby, FaDumbbell, FaPiggyBank, FaFileMedical, FaBalanceScale, FaDesktop, FaTablets, FaHeart } from "react-icons/fa";
+import SEO from "../components/SEO";
 
 function Services() {
 
@@ -68,6 +69,13 @@ function Services() {
   ];
   return (
     <>
+
+    <SEO
+  title="Health Insurance Services | Vemtek"
+  description="Plan comparison, claim support, and expert insurance guidance."
+  url="https://vemtek-insurance.onrender.com/services"
+/>
+
       <section className={styles.section}>
         <div className={styles.container}>
 

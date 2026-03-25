@@ -3,6 +3,7 @@ import { FaPhoneAlt, FaClock, FaStar, FaEnvelope, FaUserTie, FaComments, FaUsers
 import { HiChatBubbleLeftRight } from "react-icons/hi2";
 import { PiWarningBold } from "react-icons/pi";
 import Frequently_Asked_Question from "../components/Frequently-Asked-Question";
+import SEO from "../components/SEO";
 
 function Contact() {
   const handleCall = (number) => {
@@ -19,6 +20,13 @@ function Contact() {
 
   return (
     <>
+     
+     <SEO
+  title="Contact Vemtek Insurance"
+  description="Get in touch with our insurance experts for personalized support."
+  url="https://vemtek-insurance.onrender.com/contact"
+/>
+
       <section className={styles.contactPage}>
 
         {/* HERO */}

@@ -36,17 +36,40 @@ function Footer() {
               <span className={styles.socialTitle}>Connect With Us</span>
 
               <div className={styles.social}>
-                <a href="#" aria-label="Facebook">
-                  <img src={facebook} alt="Facebook" />
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit our Facebook page"
+                >
+                  <img src={facebook} alt="Facebook icon" />
                 </a>
-                <a href="#" aria-label="Instagram">
-                  <img src={instagram} alt="Instagram" />
+
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit our Instagram page"
+                >
+                  <img src={instagram} alt="Instagram icon" />
                 </a>
-                <a href="#" aria-label="LinkedIn">
-                  <img src={linkedin} alt="LinkedIn" />
+
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit our LinkedIn page"
+                >
+                  <img src={linkedin} alt="LinkedIn icon" />
                 </a>
-                <a href="#" aria-label="Twitter">
-                  <img src={twitter} alt="Twitter" />
+
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit our Twitter page"
+                >
+                  <img src={twitter} alt="Twitter icon" />
                 </a>
               </div>
             </div>
@@ -54,7 +77,7 @@ function Footer() {
 
           {/* QUICK LINKS */}
           <Col lg={2} md={6}>
-            <h5 className={styles.heading}>Quick Links</h5>
+            <h3 className={styles.heading}>Quick Links</h3>
             <ul className={styles.links}>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
@@ -65,7 +88,7 @@ function Footer() {
 
           {/* SERVICES */}
           <Col lg={2} md={6}>
-            <h5 className={styles.heading}>Our Services</h5>
+            <h3 className={styles.heading}>Our Services</h3>
             <ul className={styles.links}>
               <li>Life Insurance</li>
               <li>Health Insurance</li>
@@ -76,7 +99,7 @@ function Footer() {
 
           {/* POLICIES */}
           <Col lg={2} md={6}>
-            <h5 className={styles.heading}>Policies</h5>
+            <h3 className={styles.heading}>Policies</h3>
             <ul className={styles.links}>
               <li><Link to="/termscondition">Terms of Use</Link></li>
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
@@ -88,7 +111,7 @@ function Footer() {
 
           {/* CONTACT */}
           <Col lg={3} md={6}>
-            <h5 className={styles.heading}>Contact Us</h5>
+            <h3 className={styles.heading}>Contact Us</h3>
 
             <address className={styles.contactBox}>
               <p>

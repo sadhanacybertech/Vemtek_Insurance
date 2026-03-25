@@ -22,7 +22,8 @@ function App() {
       <CustomNavbar />
       <ScrollToTop/>
 
-      <Routes>
+     <main>
+       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
@@ -34,6 +35,7 @@ function App() {
         <Route path="/Non-Descrimination-notice" element={<NonDiscrimination />} />
 
       </Routes>
+     </main>
 
       <Footer/>
     </Router>

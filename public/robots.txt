@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vemtek-insurance.onrender.com/sitemap.xml

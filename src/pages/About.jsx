@@ -4,6 +4,7 @@ import medicareImg from "../assets/about.jpg";
 import { HiOutlineCalendarDays } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { GiCheckMark } from "react-icons/gi";
+import SEO from "../components/SEO";
 function About() {
 
   const values = [
@@ -31,6 +32,13 @@ function About() {
 
   return (
     <>
+      
+      <SEO
+  title="About Vemtek Insurance"
+  description="Learn about Vemtek Insurance and our mission to provide reliable health coverage."
+  url="https://vemtek-insurance.onrender.com/about"
+/>
+
       <section className={styles.hero}>
 
         {/* CONTENT */}
