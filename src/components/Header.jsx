@@ -39,31 +39,14 @@ function Header() {
   return (
     <div>
 
-      <div className={styles.topBar}>
-        <a href="/contact" className={styles.topBarLink}>
-          <div className={styles.marquee}>
-            <div className={styles.track}>
-
-              <span>
-                 Secure Your Future with Vemtek Insurance •
-                Expert Guidance | Tailored Coverage Plans •
-                +1 516-518-5065 • Get a Free Consultation •
-              </span>
-
-             
-
-            </div>
-          </div>
-        </a>
-      </div>
-
+    
       {/* ================= HEADER ================= */}
       <header>
         <Navbar
           expand="lg"
           expanded={expanded}
           fixed="top"
-          className={`shadow-sm ${styles.navbar}`}
+          className={`shadow-sm border border-bottom  ${styles.navbar}`}
         >
           <Container className="px-4">
 
@@ -172,6 +155,26 @@ function Header() {
         {/* 🔥 SPACING FIX */}
         <div className={styles.headerSpace}></div>
       </header>
+
+
+      
+  <div className={styles.topBar}>
+        <a href="/contact" className={styles.topBarLink}>
+          <div className={styles.marquee}>
+            <div className={styles.track}>
+
+              <span>
+                 Secure Your Future with Vemtek Insurance •
+                Expert Guidance | Tailored Coverage Plans •
+                +1 516-518-5065 • Get a Free Consultation •
+              </span>
+
+             
+
+            </div>
+          </div>
+        </a>
+      </div>
 
     </div>
   );

@@ -9,19 +9,16 @@
 
 /* ================= TOP BAR ================= */
 .topBar {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  z-index: 1050;
+  z-index: 1500;
 
   background: linear-gradient(90deg, var(--primary), var(--secondary));
   color: var(--white);
 
-  padding: 6px 0;
+  padding: 8px 0;
   font-size: 13px;
   overflow: hidden;
-  cursor: pointer;
 }
 
 /* glow line */
@@ -48,16 +45,17 @@
 }
 
 .track {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
   white-space: nowrap;
   animation: scrollLeft 20s linear infinite;
 }
 
 .track span {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 20px;
-  padding-right: 60px;
+  padding-right: 50px;
   font-weight: 500;
 }
 
@@ -73,31 +71,40 @@
   color: var(--green);
 }
 
-/* ✅ PAUSE ON HOVER */
+/* pause on hover */
 .topBar:hover .track,
 .topBarLink:hover .track {
   animation-play-state: paused;
-  color: white;
 }
 
-/* ================= ANIMATION ================= */
-@keyframes scrollLeft {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR (FIXED) ================= */
 .navbar {
-  top: 32px;
+  position: fixed;   /* 🔥 main fix */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+
   background-color: #fefefe;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #f1f1f1;
-  transition: all 0.3s ease;
 }
 
-/* ================= SPACING ================= */
+/* alignment */
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ================= BODY OFFSET ================= */
+body {
+  padding-top: 70px;
+}
+
+/* ================= REMOVE EXTRA SPACE ================= */
 .headerSpace {
-  height: 110px;
+  display: none;
 }
 
 /* ================= LOGO ================= */
@@ -116,6 +123,7 @@
   letter-spacing: 0.3px;
   text-transform: uppercase;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .navLink::after {
@@ -148,6 +156,7 @@
   border-radius: 25px;
   font-weight: 500;
   color: var(--primary);
+  white-space: nowrap;
   transition: 0.3s;
 }
 
@@ -217,6 +226,7 @@
   transition: 0.3s;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .loginBtn::before {
@@ -278,8 +288,13 @@
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 991px) {
+
+  .navbar .container {
+    flex-wrap: wrap;
+  }
+
   .navLink {
-    margin: 4px 0;
+    margin: 6px 0;
     font-size: 16px;
   }
 
@@ -287,32 +302,29 @@
     width: 100%;
   }
 
-  .navbar {
-    top: 30px;
-  }
-
-  .headerSpace {
-    height: 100px;
+  body {
+    padding-top: 75px;
   }
 }
 
 @media (max-width: 576px) {
+
   .topBar {
     font-size: 12px;
-    padding: 5px 0;
+    padding: 6px 0;
   }
 
   .track span {
     gap: 15px;
-    padding-right: 40px;
+    padding-right: 30px;
   }
 
-  .navbar {
-    top: 28px;
+  .logo {
+    height: 38px;
   }
 
-  .headerSpace {
-    height: 95px;
+  body {
+    padding-top: 80px;
   }
 }
 
@@ -332,4 +344,9 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
