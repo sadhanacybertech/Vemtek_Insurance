@@ -39,7 +39,7 @@ function Header() {
   return (
     <div>
 
-    
+
       {/* ================= HEADER ================= */}
       <header>
         <Navbar
@@ -101,7 +101,7 @@ function Header() {
               {/* NAV LINKS */}
               <Nav className={`mx-auto text-center ${styles.mobileMenu}`}>
                 {["/", "/about", "/services", "/contact"].map((path, i) => {
-                  const labels = ["Home", "About Us", "Services", "Contact Us"];
+                  const labels = ["Home", "About Us", "Services", "Support"];
                   return (
                     <Nav.Link
                       key={i}
@@ -156,24 +156,24 @@ function Header() {
         <div className={styles.headerSpace}></div>
       </header>
 
+      <div className={styles.quoteBar}>
+        <div className={styles.quoteContainer}>
 
-      
-  <div className={styles.topBar}>
-        <a href="/contact" className={styles.topBarLink}>
+          <span className={styles.quoteLabel}>
+            <i className="fa-solid fa-shield-heart"></i> Quote:
+          </span>
+
           <div className={styles.marquee}>
             <div className={styles.track}>
 
               <span>
-                 Secure Your Future with Vemtek Insurance •
-                Expert Guidance | Tailored Coverage Plans •
-                +1 516-518-5065 • Get a Free Consultation •
+                “Health coverage is essential for financial security and peace of mind.”
               </span>
-
-             
 
             </div>
           </div>
-        </a>
+
+        </div>
       </div>
 
     </div>

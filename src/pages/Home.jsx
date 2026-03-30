@@ -242,8 +242,6 @@ function Home() {
         </div>
       </section>
 
-
-
       <style>
         {`
 /* overlay */
@@ -432,7 +430,7 @@ function Home() {
   background: #fff;
   color: #053e99;
   padding: 13px 22px;
-  border-radius: 40px;
+  border-radius: 10px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -624,22 +622,22 @@ function Home() {
             {healthIns.map((item, i) => (
               <div key={i} className={styles.card}>
 
-                <div className={styles.icon}>
+                <div className={styles.iconss}>
                   {item.icon}
                 </div>
 
-                <h3 className="fs-6 fw-bold">{item.title}</h3>
-                <p>{item.desc}</p>
+                <h3 className="">{item.title}</h3>
+                <p className="fs-6">{item.desc}</p>
 
-                {/* <div className={styles.btnGroup}>
-                  <button className={styles.primaryBtn}>
+                <div className={styles.btnGroup}>
+                  <button className={styles.primaryBtnn}>
                     Get Details →
                   </button>
 
-                  <button className={styles.secondaryBtn}>
+                  <button className={styles.secondaryBtnn}>
                     Get a Quote
                   </button>
-                </div> */}
+                </div>
 
               </div>
             ))}

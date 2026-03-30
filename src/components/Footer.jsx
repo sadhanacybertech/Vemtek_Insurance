@@ -37,7 +37,7 @@ function Footer() {
 
               <div className={styles.social}>
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/people/Vemtek-Insurance/61578522339554/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our Facebook page"
@@ -46,7 +46,7 @@ function Footer() {
                 </a>
 
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/vemtekinsurance/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our Instagram page"

@@ -6,77 +6,97 @@
   --green: #70ac10;
   --white: #ffffff;
 }
-
-/* ================= TOP BAR ================= */
-.topBar {
+/* ================= QUOTE BAR ================= */
+.quoteBar {
   position: relative;
   width: 100%;
-  z-index: 1500;
-
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  color: var(--white);
-
-  padding: 8px 0;
-  font-size: 13px;
+  background: linear-gradient(90deg, #0a66ff, #1bbf83);
+  color: #fff;
+  padding: 9px 0;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* container */
+.quoteContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* label */
+.quoteLabel {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.quoteLabel i {
+  color: #e6fff5;
+  font-size: 14px;
+}
+
+/* marquee */
+.marquee {
+  overflow: hidden;
+  flex: 1;
+  position: relative;
+}
+
+/* track */
+.track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: scrollQuote 18s linear infinite;
+}
+
+/* text */
+.track span {
+  padding-right: 80px;
+  font-style: italic;
+  opacity: 0.95;
+}
+
+/* ================= FIXED ANIMATION ================= */
+/* Starts from right → moves to left */
+@keyframes scrollQuote {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* hover pause */
+.quoteBar:hover .track {
+  animation-play-state: paused;
 }
 
 /* glow line */
-.topBar::after {
+.quoteBar::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #1bbf83, transparent);
 }
 
-/* ================= CLICKABLE ================= */
-.topBarLink {
-  display: block;
-  color: var(--white);
-  text-decoration: none;
+/* responsive */
+@media (max-width: 768px) {
+  .track span {
+    font-size: 12px;
+    padding-right: 50px;
+  }
 }
-
-/* ================= MARQUEE ================= */
-.marquee {
-  overflow: hidden;
-}
-
-.track {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  animation: scrollLeft 20s linear infinite;
-}
-
-.track span {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding-right: 50px;
-  font-weight: 500;
-}
-
-/* links */
-.track a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.track a:hover {
-  color: var(--green);
-}
-
-/* pause on hover */
-.topBar:hover .track,
-.topBarLink:hover .track {
-  animation-play-state: paused;
-}
-
 /* ================= NAVBAR (FIXED) ================= */
 .navbar {
   position: fixed;   /* 🔥 main fix */

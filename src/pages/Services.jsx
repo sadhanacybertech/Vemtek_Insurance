@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import styles from "./Services.module.css";
 import { FaLayerGroup, FaPhoneAlt, FaUsers, FaHeadset, FaShieldAlt, FaCheckCircle, FaBook, FaShoppingCart, FaPlus, FaCalendarAlt, FaHandshake, FaTooth, FaLaptopMedical, FaCapsules, FaHeartbeat, FaBaby, FaDumbbell, FaPiggyBank, FaFileMedical, FaBalanceScale, FaDesktop, FaTablets, FaHeart } from "react-icons/fa";
 import SEO from "../components/SEO";
-
+import medicareImg from "../assets/medicare-insurance.jpg";
+import acaImg from "../assets/ACAPlans.webp";
+import lifeImg from "../assets/life-insurance.jpeg";
+import finalexpenseImg from "../assets/final-expence-insurance.webp";
 function Services() {
 
   const services = [
@@ -70,11 +73,11 @@ function Services() {
   return (
     <>
 
-    <SEO
-  title="Health Insurance Services | Vemtek"
-  description="Plan comparison, claim support, and expert insurance guidance."
-  url="https://vemtek-insurance.onrender.com/services"
-/>
+      <SEO
+        title="Health Insurance Services | Vemtek"
+        description="Plan comparison, claim support, and expert insurance guidance."
+        url="https://vemtek-insurance.onrender.com/services"
+      />
 
       <section className={styles.section}>
         <div className={styles.container}>
@@ -153,12 +156,11 @@ function Services() {
         </div>
       </section>
 
-
-      <section className={styles.section}>
-        <div className={styles.container}>
+      <section className={`${styles.sectionn} border-top border-bottom`}>
+        <div className="container">
 
           {/* HEADING */}
-          <div className={styles.heading}>
+          <div className={styles.headingg}>
             <h2>Our Health Insurance Solutions</h2>
             <p>
               Everyone's needs are different. That's why we offer a variety of
@@ -167,62 +169,180 @@ function Services() {
             </p>
           </div>
 
-          {/* CARDS */}
-          <div className={styles.grid}>
+          {/* CONTENT */}
+          <div className="row align-items-center justify-content-center mt-5">
 
-            {/* CARD 1 */}
-            <div className={styles.card}>
-              <div className={styles.icon}>
-                <FaPlus />
+
+            {/* RIGHT CONTENT */}
+            <div className="col-lg-5">
+              <div className={styles.contentt}>
+
+                <span className={styles.badgee}>Medicare Plans</span>
+
+                <h3 className={styles.medicare}>
+                  Comprehensive Medicare Coverage
+                </h3>
+
+                <p className={styles.description}>
+                  Explore Medicare plans designed for seniors, including
+                  Part B for medical services, Part D for prescription drugs,
+                  and Medicare Advantage for comprehensive coverage. Compare
+                  benefits, receive expert guidance, and choose
+                  a plan that suits your healthcare needs, lifestyle, and budget
+                  with an easy, stress-free enrollment process.
+                </p>
+
+                <button className={styles.btn}>
+                  Explore Medicare Plans →
+                </button>
+
               </div>
-              <h4>Medicare Plans</h4>
-              <p>
-                Explore plans for seniors including Part B, Part D, and Medicare
-                Advantage options.
-              </p>
             </div>
 
-            {/* CARD 2 */}
-            <div className={styles.card}>
-              <div className={styles.icon}>
-                <FaShoppingCart />
-              </div>
-              <h4>ACA Marketplace Health Plans</h4>
-              <p>
-                Get affordable coverage through the ACA Marketplace with flexible
-                options.
-              </p>
-            </div>
 
-            {/* CARD 3 */}
-            <div className={styles.card}>
-              <div className={styles.icon}>
-                <FaBook />
-              </div>
-              <h4>Life Insurance</h4>
-              <p>
-                Protect your loved ones financially with secure and reliable life
-                insurance coverage tailored to your needs.
-              </p>
-            </div>
 
-            {/* CARD 4 (UPDATED) */}
-            <div className={styles.card}>
-              <div className={styles.icon}>
-                <FaHeartbeat />
+            {/* LEFT IMAGE */}
+            <div className="col-lg-6 text-center mb-4 mb-lg-0">
+              <div className={styles.imageWrapperr}>
+                <img
+                  src={medicareImg}
+                  alt="Medicare plans"
+                  className="img-fluid"
+                />
               </div>
-              <h4>Final Expense Insurance</h4>
-              <p>
-                Ease the financial burden on your family by covering funeral and
-                end-of-life expenses with simple and affordable plans.
-              </p>
             </div>
 
           </div>
-
         </div>
       </section>
-      <section className={styles.wrapperr}>
+
+
+
+      {/* ACA Marketplace  */}
+      <section className={`${styles.acaModern} border-top border-bottom`}>
+        <div className="container">
+          <div className="row align-items-center">
+
+            {/* RIGHT IMAGE */}
+            <div className="col-lg-6 text-center mt-4 mt-lg-0">
+              <div className={styles.acaImageWrapper}>
+                <img src={acaImg} alt="ACA Plans" />
+              </div>
+            </div>
+
+            {/* LEFT CONTENT */}
+            <div className="col-lg-6">
+              <div className={styles.acaContentBox}>
+
+                <span className={styles.acaBadge}>ACA Marketplace</span>
+
+                <h2>
+                  Affordable Health Coverage <br /> for Everyone
+                </h2>
+
+                <p>
+                  ACA Marketplace plans offer essential health benefits,
+                  preventive care, and financial assistance options. Choose
+                  flexible coverage designed for individuals and families
+                  with transparent pricing and easy enrollment.
+                </p>
+
+                <button className={styles.acaBtn}>
+                  Explore ACA Plans →
+                </button>
+
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Life Insurance  */}
+      <section className={`${styles.lifeHero} border-top border-bottom`}>
+        <div className="container">
+          <div className="row align-items-center">
+
+            {/* LEFT CONTENT */}
+            <div className="col-lg-6">
+
+              <span className={styles.lifeBadge}>Life Insurance</span>
+
+              <h2 className={styles.lifeTitle}>
+                Secure Your Family’s Future
+              </h2>
+
+              <p className={styles.lifeDesc}>
+                Life insurance ensures financial protection for your loved ones
+                by providing long-term security, income replacement, and support
+                during uncertain times. Choose flexible plans designed to match
+                your financial goals and safeguard your family’s future.
+              </p>
+
+              <button className={styles.lifeBtn}>
+                Explore Life Plans →
+              </button>
+
+            </div>
+
+
+            {/* RIGHT IMAGE */}
+            <div className="col-lg-6 text-center mt-4 mt-lg-0">
+              <div className={styles.lifeImgBox}>
+                <img src={lifeImg} alt="Life Insurance" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Final Expense Insurance   */}
+      <section className={`${styles.acaModern} border-top border-bottom`}>
+        <div className="container">
+          <div className="row align-items-center">
+
+            {/* RIGHT IMAGE */}
+            <div className="col-lg-6 text-center mt-4 mt-lg-0">
+              <div className={styles.acaImageWrapper}>
+                <img src={finalexpenseImg} alt="Final Expense Insurance" />
+              </div>
+            </div>
+
+            {/* LEFT CONTENT */}
+            <div className="col-lg-6">
+              <div className={styles.acaContentBox}>
+
+                <span className={styles.acaBadge}>Final Expense Insurance</span>
+
+                <h2>
+                  Affordable Final Expense Coverage for Peace of Mind
+                </h2>
+
+                <p>
+                  Final expense insurance helps cover end-of-life costs such as funeral
+                  expenses, medical bills, and outstanding debts. It ensures your loved
+                  ones are not burdened financially during difficult times, with simple
+                  plans, affordable premiums, and quick approval.
+                </p>
+
+                <button className={styles.acaBtn}>
+                  Explore Final Expense Plans →
+                </button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <section className={`${styles.wrapperr} border-top border-bottom`}>
         <div className={styles.container}>
 
           <div className={styles.headingg}>

@@ -1,0 +1,19 @@
+/* ================= GLOBAL TEXT ================= */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 28px;
+  color: #053e99;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Paragraphs */
+p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
