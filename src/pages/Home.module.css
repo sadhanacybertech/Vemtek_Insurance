@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 /* ================= HERO SECTION ================= */
 
 .health-hero {
@@ -419,16 +422,14 @@
 
 
 
-
 /* ================= WRAPPER (MAIN ISOLATION) ================= */
 .sectionWrapper {
   position: relative;
   isolation: isolate;
   z-index: 0;
 
-  padding: 90px 0;
+  padding: 80px 0;
   background: linear-gradient(180deg, #fefefe, #eef5ff);
-
   overflow: hidden;
 }
 
@@ -444,66 +445,63 @@
 .headingBoxx {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 60px;
+  margin: 0 auto 50px;
 }
 
 .headingBoxx h2 {
-  font-size: 45px;
+  font-size: clamp(28px, 4vw, 45px);
   font-weight: 800;
   color: #053e99;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   position: relative;
   display: inline-block;
 }
 
 .headingBoxx h2::after {
   content: "";
-  width: 200px;
+  width: 140px;
   height: 3px;
   background: linear-gradient(90deg, #70ac10, #3a90d4);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -10px;
+  bottom: -8px;
 }
 
 .headingBoxx p {
-  font-size: 16px;
+  font-size: clamp(14px, 1.5vw, 16px);
   color: #555;
-  line-height: 1.7;
-  margin-top: 15px;
+  line-height: 1.6;
+  margin-top: 12px;
 }
 
 /* ================= GRID ================= */
 .gridd {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 25px;
 }
 
 /* ================= CARD ================= */
 .card {
   background: #ffffff;
-  border-radius: 20px;
-  padding: 35px 25px;
+  border-radius: 18px;
+  padding: 28px 22px;
   text-align: center;
 
   position: relative;
   z-index: 1;
 
   transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 
-  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-
-  /* 🔥 ADD THIS */
   display: flex;
   flex-direction: column;
 }
 
-/* hover */
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
 /* border glow */
@@ -511,7 +509,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 20px;
+  border-radius: 18px;
   padding: 1px;
   background: linear-gradient(135deg, #70ac10, #3a90d4);
 
@@ -523,6 +521,7 @@
 
   opacity: 0;
   transition: 0.4s;
+  pointer-events: none;
 }
 
 .card:hover::before {
@@ -531,44 +530,41 @@
 
 /* ================= ICON ================= */
 .iconss {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  border-radius: 14px;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
+  border-radius: 12px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 42px;
-
+  font-size: 34px;
   color: #0b5b1e;
   background-color: rgba(35, 105, 159, 0.12);
 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 .card:hover .iconss {
-  transform: translateY(-5px) scale(1.05);
+  transform: translateY(-4px) scale(1.05);
   background-color: rgba(58, 144, 212, 0.2);
 }
 
 /* ================= TEXT ================= */
 .card h3 {
-  font-size: 28px;
+  font-size: clamp(20px, 2vw, 26px);
   color: #053e99;
-  margin-bottom: 22px;
-  font-weight:800;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 16px;
+  font-weight: 800;
 }
 
 .card p {
-  font-size: 16px;
+  font-size: 14px;
   color: #666;
   line-height: 1.6;
-  margin-bottom: 20px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  margin-bottom: 18px;
 }
 
 /* ================= BUTTONS ================= */
@@ -577,17 +573,16 @@
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-
-  /* 🔥 IMPORTANT */
-  margin-top: auto; /* push buttons to bottom */
+  margin-top: auto;
 }
 
 .btnGroup button {
   flex: 1;
-  min-width: 90px;
-  max-width: 130px;
-  padding: 8px 0;   /* slightly reduced height */
+  min-width: 100px;
+  max-width: 140px;
+  padding: 9px 0;
   font-size: 13px;
+  cursor: pointer;
 }
 
 /* PRIMARY */
@@ -595,13 +590,10 @@
   background: linear-gradient(135deg, #053e99, #1264bb);
   color: #fff;
   border: none;
-  padding: 10px 0;
   border-radius: 10px;
   font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
   font-weight: bold;
-  text-align: center;
+  transition: 0.3s;
 }
 
 .primaryBtnn:hover {
@@ -613,13 +605,10 @@
   background: transparent;
   border: 1px solid #053e99;
   color: #053e99;
-  padding: 10px 0;
   border-radius: 10px;
   font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
   font-weight: bold;
-  text-align: center;
+  transition: 0.3s;
 }
 
 .secondaryBtnn:hover {
@@ -629,33 +618,51 @@
 
 /* ================= RESPONSIVE ================= */
 
+/* Tablets */
 @media (max-width: 992px) {
   .gridd {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .sectionWrapper {
+    padding: 60px 0;
+  }
 }
 
+/* Mobile */
 @media (max-width: 576px) {
   .gridd {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .headingBoxx h2 {
-    font-size: 26px;
+  .sectionWrapper {
+    padding: 50px 0;
   }
 
-  .headingBoxx p {
-    font-size: 14px;
+  .headingBoxx {
+    margin-bottom: 35px;
   }
 
-  /* 🔥 stack buttons on mobile */
   .btnGroup {
     flex-direction: column;
   }
+
+  .btnGroup button {
+    max-width: 100%;
+  }
 }
 
+/* click safety */
+.card {
+  position: relative;
+  z-index: 1;
+}
 
-
+.card * {
+  position: relative;
+  z-index: 2;
+}
 
 
 

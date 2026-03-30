@@ -10,10 +10,37 @@ import { Swiper } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Frequently_Asked_Question from "../components/Frequently-Asked-Question";
 import { HiOutlineCalendarDays } from "react-icons/hi2";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import SEO from "../components/SEO";
 function Home() {
+    const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+
+      if (el) {
+        // wait for layout to stabilize
+        requestAnimationFrame(() => {
+          const navbar = document.querySelector("header"); // or your navbar class
+          const offset = navbar ? navbar.offsetHeight : 80;
+
+          const y =
+            el.getBoundingClientRect().top +
+            window.pageYOffset -
+            offset;
+
+          window.scrollTo({
+            top: y,
+            behavior: "smooth",
+          });
+        });
+      }
+    }
+  }, [location.hash]);
+
 
   const data = [
     {
@@ -40,27 +67,30 @@ function Home() {
 
 
 
-
   const healthIns = [
     {
       icon: <FaPlus />,
       title: "Medicare Plans",
-      desc: "Explore plans for seniors including Part B, Part D, and Medicare Advantage options."
+      desc: "Find the right coverage for seniors with Medicare Part B, Part D, and Medicare Advantage plans tailored to your healthcare needs.",
+      link: "/services#medicare"
     },
     {
       icon: <FaShoppingCart />,
-      title: "ACA Marketplace Health Plans",
-      desc: "Get affordable coverage through the ACA Marketplace."
+      title: "ACA Marketplace Plans",
+      desc: "Access affordable health insurance through ACA Marketplace plans with essential benefits, preventive care, and financial assistance.",
+      link: "/services#aca"
     },
     {
       icon: <FaBook />,
       title: "Life Insurance",
-      desc: "Protect your loved ones from unexpected expenses with final expense insurance."
+      desc: "Protect your family’s financial future with flexible life insurance plans designed to cover income loss, debts, and long-term needs.",
+      link: "/services#lifeinsurance"
     },
     {
       icon: <FaHeartbeat />,
       title: "Final Expense Insurance",
-      desc: "Ease the financial burden on your family by covering funeral and end-of-life expenses with simple and affordable plans."
+      desc: "Cover funeral costs, medical bills, and end-of-life expenses with simple, affordable plans that ease the financial burden on your loved ones.",
+      link: "/services#finalexpense"
     }
   ];
 
@@ -626,17 +656,25 @@ function Home() {
                   {item.icon}
                 </div>
 
-                <h3 className="">{item.title}</h3>
+                <h3>{item.title}</h3>
                 <p className="fs-6">{item.desc}</p>
 
                 <div className={styles.btnGroup}>
-                  <button className={styles.primaryBtnn}>
+
+                  <button
+                    className={styles.primaryBtnn}
+                    onClick={() => navigate(item.link)}
+                  >
                     Get Details →
                   </button>
 
-                  <button className={styles.secondaryBtnn}>
+                  <button
+                    className={styles.secondaryBtnn}
+                    onClick={() => window.location.href = "/contact"}
+                  >
                     Get a Quote
                   </button>
+
                 </div>
 
               </div>

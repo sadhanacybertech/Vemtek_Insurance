@@ -156,7 +156,7 @@ function Services() {
         </div>
       </section>
 
-      <section className={`${styles.sectionn} border-top border-bottom`}>
+      <section className={`${styles.sectionn} border-top border-bottom`} id="medicare">
         <div className="container">
 
           {/* HEADING */}
@@ -219,7 +219,7 @@ function Services() {
 
 
       {/* ACA Marketplace  */}
-      <section className={`${styles.acaModern} border-top border-bottom`}>
+      <section className={`${styles.acaModern} border-top border-bottom`} id="aca">
         <div className="container">
           <div className="row align-items-center">
 
@@ -263,7 +263,7 @@ function Services() {
 
 
       {/* Life Insurance  */}
-      <section className={`${styles.lifeHero} border-top border-bottom`}>
+      <section className={`${styles.lifeHero} border-top border-bottom`} id="lifeinsurance">
         <div className="container">
           <div className="row align-items-center">
 
@@ -302,7 +302,7 @@ function Services() {
       </section>
 
       {/* Final Expense Insurance   */}
-      <section className={`${styles.acaModern} border-top border-bottom`}>
+      <section className={`${styles.acaModern} border-top border-bottom`} id="finalexpense">
         <div className="container">
           <div className="row align-items-center">
 
