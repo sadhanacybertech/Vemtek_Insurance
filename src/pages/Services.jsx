@@ -1,12 +1,49 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Services.module.css";
-import { FaLayerGroup, FaPhoneAlt, FaUsers, FaHeadset, FaShieldAlt, FaCheckCircle, FaBook, FaShoppingCart, FaPlus, FaCalendarAlt, FaHandshake, FaTooth, FaLaptopMedical, FaCapsules, FaHeartbeat, FaBaby, FaDumbbell, FaPiggyBank, FaFileMedical, FaBalanceScale, FaDesktop, FaTablets, FaHeart } from "react-icons/fa";
+import { FaLayerGroup, FaPhoneAlt, FaUsers, FaHeadset, FaShieldAlt, FaCheckCircle, FaBook, FaShoppingCart, FaPlus, FaCalendarAlt, FaHandshake, FaTooth, FaLaptopMedical, FaCapsules, FaHeartbeat, FaBaby, FaDumbbell, FaPiggyBank, FaFileMedical, FaBalanceScale, FaDesktop, FaTablets, FaHeart, FaStar } from "react-icons/fa";
 import SEO from "../components/SEO";
 import medicareImg from "../assets/medicare-insurance.jpg";
 import acaImg from "../assets/ACAPlans.webp";
 import lifeImg from "../assets/life-insurance.jpeg";
 import finalexpenseImg from "../assets/final-expence-insurance.webp";
+import healthImg from "../assets/health-insurance.webp";
+import { useEffect } from "react";
 function Services() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // disable browser auto jump restoration
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    if (location.hash) {
+      const id = location.hash;
+
+      // 🔥 stop instant jump
+      window.scrollTo(0, 0);
+
+      const timer = setTimeout(() => {
+        const el = document.querySelector(id);
+
+        if (el) {
+          const yOffset = -80; // navbar height adjust
+          const y =
+            el.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+
+          window.scrollTo({
+            top: y,
+            behavior: "smooth",
+          });
+        }
+      }, 200);
+
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
 
   const services = [
     {
@@ -170,7 +207,7 @@ function Services() {
           </div>
 
           {/* CONTENT */}
-          <div className="row align-items-center justify-content-center mt-5">
+          <div className="row align-items-center justify-content-center">
 
 
             {/* RIGHT CONTENT */}
@@ -184,17 +221,42 @@ function Services() {
                 </h3>
 
                 <p className={styles.description}>
-                  Explore Medicare plans designed for seniors, including
-                  Part B for medical services, Part D for prescription drugs,
-                  and Medicare Advantage for comprehensive coverage. Compare
-                  benefits, receive expert guidance, and choose
-                  a plan that suits your healthcare needs, lifestyle, and budget
-                  with an easy, stress-free enrollment process.
+                  Choosing the right Medicare plan can make a significant difference in
+                  both your healthcare coverage and out-of-pocket costs. With multiple
+                  parts covering hospital stays, medical services, and prescription
+                  drugs Medicare can quickly become confusing, especially when considering
+                  supplemental or advantage plans.
+                  <br /> <br />
+
+                  Missing the right coverage could lead
+                  to gaps that result in unexpected expenses over time. Vemtek Insurance
+                  helps simplify this process by clearly explaining your options, comparing plans,
+                  and guiding you toward coverage that fits your healthcare needs, preferred doctors,
+                  and budget so you can feel confident in your decisions.
                 </p>
 
-                <button className={styles.btn}>
+                {/* <button className={styles.btn}>
                   Explore Medicare Plans →
-                </button>
+                </button> */}
+
+
+
+                <div className={styles.badges}>
+                  <div className={styles.badgeItem}>
+                    <FaShieldAlt className={styles.icon} />
+                    <span>Medicare Experts</span>
+                  </div>
+
+                  <div className={styles.badgeItem}>
+                    <FaStar className={styles.icon} />
+                    <span>Top-Rated Plans</span>
+                  </div>
+
+                  <div className={styles.badgeItem}>
+                    <FaUsers className={styles.icon} />
+                    <span>Trusted by Seniors</span>
+                  </div>
+                </div>
 
               </div>
             </div>
@@ -204,6 +266,9 @@ function Services() {
             {/* LEFT IMAGE */}
             <div className="col-lg-6 text-center mb-4 mb-lg-0">
               <div className={styles.imageWrapperr}>
+                <span className={styles.circle1}></span>
+                <span className={styles.circle2}></span>
+
                 <img
                   src={medicareImg}
                   alt="Medicare plans"
@@ -237,19 +302,45 @@ function Services() {
                 <span className={styles.acaBadge}>ACA Marketplace</span>
 
                 <h2>
-                  Affordable Health Coverage <br /> for Everyone
+                  Affordable Health Coverage for Everyone
                 </h2>
 
                 <p>
-                  ACA Marketplace plans offer essential health benefits,
-                  preventive care, and financial assistance options. Choose
-                  flexible coverage designed for individuals and families
-                  with transparent pricing and easy enrollment.
+                  The ACA Marketplace offers access to comprehensive health insurance
+                  plans that include essential benefits such as preventive care,
+                  hospitalization, maternity services, and prescription coverage.
+                  One of its biggest advantages is the availability of financial
+                  assistance, which can significantly lower monthly premiums and
+                  out-of-pocket costs based on your income and household size.
+                  <br /> <br />
+                  However, understanding eligibility requirements, enrollment
+                  periods, and plan differences can be challenging without
+                  proper guidance. Vemtek Insurance helps you navigate the
+                  entire process from checking subsidy eligibility
+                  to comparing plans so you can confidently choose coverage that
+                  meets your healthcare needs while maximizing your savings.
                 </p>
 
-                <button className={styles.acaBtn}>
+                {/* <button className={styles.acaBtn}>
                   Explore ACA Plans →
-                </button>
+                </button> */}
+
+                <div className={` ${styles.badges} mt-3`}>
+                  <div className={styles.badgeItem}>
+                    <FaShieldAlt className={styles.icon} />
+                    <span>ACA Experts</span>
+                  </div>
+
+                  <div className={styles.badgeItem}>
+                    <FaStar className={styles.icon} />
+                    <span>Affordable Plans</span>
+                  </div>
+
+                  <div className={styles.badgeItem}>
+                    <FaUsers className={styles.icon} />
+                    <span>Financial Assistance Available</span>
+                  </div>
+                </div>
 
               </div>
             </div>
@@ -277,15 +368,41 @@ function Services() {
               </h2>
 
               <p className={styles.lifeDesc}>
-                Life insurance ensures financial protection for your loved ones
-                by providing long-term security, income replacement, and support
-                during uncertain times. Choose flexible plans designed to match
-                your financial goals and safeguard your family’s future.
+                Life insurance is one of the most important steps you can take to protect
+                your family’s financial future. It helps cover income loss, outstanding
+                debts, mortgage payments, and everyday living expenses so your loved
+                ones stay financially secure no matter what happens. Beyond immediate
+                protection, the right life insurance plan can also support long-term
+                goals like funding your child’s education or maintaining your family’s
+                lifestyle.
+                <br /> <br />
+                At Vemtek Insurance, we make it simple to compare flexible
+                term and permanent life insurance
+                options tailored to your needs, helping you choose coverage that aligns
+                with both your current situation and future plans without unnecessary complexity.
               </p>
 
-              <button className={styles.lifeBtn}>
+              {/* <button className={styles.lifeBtn}>
                 Explore Life Plans →
-              </button>
+              </button> */}
+
+              <div className={` ${styles.badges} mt-3`}>
+                <div className={styles.badgeItem}>
+                  <FaShieldAlt className={styles.icon} />
+                  <span>Trusted Life Experts</span>
+                </div>
+
+                <div className={styles.badgeItem}>
+                  <FaStar className={styles.icon} />
+                  <span>Affordable Coverage</span>
+                </div>
+
+                <div className={styles.badgeItem}>
+                  <FaUsers className={styles.icon} />
+                  <span>Secure Your Family’s Future</span>
+                </div>
+              </div>
+
 
             </div>
 
@@ -324,16 +441,101 @@ function Services() {
                 </h2>
 
                 <p>
-                  Final expense insurance helps cover end-of-life costs such as funeral
-                  expenses, medical bills, and outstanding debts. It ensures your loved
-                  ones are not burdened financially during difficult times, with simple
-                  plans, affordable premiums, and quick approval.
+                  Final expense insurance is designed to provide financial relief to your
+                  loved ones during a difficult and emotional time. It helps cover funeral
+                  costs, burial expenses, medical bills, and other end-of-life obligations
+                  that can otherwise place a sudden financial burden on your family. Unlike
+                  more complex policies, final expense plans are typically straightforward,
+                  with smaller coverage amounts, simplified underwriting, and faster
+                  approvals.
+                  <br /> <br />
+                  Vemtek Insurance offers dependable and easy-to-understand options
+                  that allow you to plan ahead responsibly, ensuring your family is protected from
+                  unexpected financial stress while honoring your wishes.
                 </p>
 
-                <button className={styles.acaBtn}>
+                {/* <button className={styles.acaBtn}>
                   Explore Final Expense Plans →
-                </button>
+                </button> */}
 
+                <div className={` ${styles.badges} mt-3`}>
+                  <div className={styles.badgeItem}>
+                    <FaShieldAlt className={styles.icon} />
+                    <span>Final Expense Experts</span>
+                  </div>
+
+                  <div className={styles.badgeItem}>
+                    <FaStar className={styles.icon} />
+                    <span>Affordable Coverage</span>
+                  </div>
+
+                  <div className={styles.badgeItem}>
+                    <FaUsers className={styles.icon} />
+                    <span>Peace of Mind Protection</span>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* health insurance services section */}
+
+      <section className={styles.healthsection}>
+        <div className="container">
+          <div className={styles.row}>
+
+            {/* LEFT CONTENT */}
+            <div className={styles.healthcontent}>
+
+              <span className={styles.healthbadge}>Health Insurance</span>
+
+              <h2>
+                Protect Your Health & Your Future
+              </h2>
+
+              <p>
+                Health insurance is essential not only for emergencies but also for
+                managing your overall well-being through preventive care, regular
+                checkups, and early treatment. Without the right coverage, even routine
+                medical needs can become financially overwhelming. A well-structured
+                plan protects you from high medical bills while ensuring access to a
+                wide network of healthcare providers and services.
+              </p>
+
+              <p>
+                With Vemtek Insurance,
+                you can explore a range of affordable health insurance options designed to
+                balance premiums, deductibles, and benefits helping you find a plan that
+                supports both your health and financial stability over the long term.
+              </p>
+
+              {/* <button className={styles.healthbtn}>
+                Explore Health Plans →
+              </button> */}
+
+              {/* BADGES */}
+              <div className={styles.healthbadges}>
+                <div><FaShieldAlt /> Trusted Experts</div>
+                <div><FaStar /> Affordable Plans</div>
+                <div><FaHeartbeat /> Complete Coverage</div>
+              </div>
+
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div className={styles.healthimageWrapper}>
+              <span></span>
+              <span></span>
+
+              <div className={styles.healthimageBox}>
+                <img src={healthImg} alt="Health Insurance" />
               </div>
             </div>
 

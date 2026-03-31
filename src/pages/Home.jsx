@@ -16,7 +16,6 @@ import SEO from "../components/SEO";
 import ScrollToTop from "../components/ScrollToTop";
 function Home() {
 
-
   const navigate = useNavigate();
 
   const handleNavigate = (link) => {
@@ -27,41 +26,32 @@ function Home() {
     navigate("/contact");
   };
 
-
-  const Services = () => {
-    const location = useLocation();
-
-    useEffect(() => {
-      // 🔥 disable default browser scroll restoration
-      if ("scrollRestoration" in window.history) {
-        window.history.scrollRestoration = "manual";
-      }
-
-      const scrollToSection = () => {
-        if (location.hash) {
-          const el = document.querySelector(location.hash);
-
-          if (el) {
-            const yOffset = -80;
-            const y =
-              el.getBoundingClientRect().top +
-              window.pageYOffset +
-              yOffset;
-
-            window.scrollTo({
-              top: y,
-              behavior: "smooth", // ✅ now it will be smooth
-            });
-          }
-        }
-      };
-
-      // small delay ensures DOM fully ready
-      const timer = setTimeout(scrollToSection, 150);
-
-      return () => clearTimeout(timer);
-    }, [location]);
-  };
+  const healthIns = [
+    {
+      icon: <FaPlus />,
+      title: "Medicare Plans",
+      desc: "Find the right coverage for seniors with Medicare Part B, Part D, and Medicare Advantage plans tailored to your healthcare needs.",
+      link: "/services#medicare",
+    },
+    {
+      icon: <FaShoppingCart />,
+      title: "ACA Marketplace Plans",
+      desc: "Access affordable health insurance through ACA Marketplace plans with essential benefits, preventive care, and financial assistance.",
+      link: "/services#aca",
+    },
+    {
+      icon: <FaBook />,
+      title: "Life Insurance",
+      desc: "Protect your family’s financial future with flexible life insurance plans designed to cover income loss, debts, and long-term needs.",
+      link: "/services#lifeinsurance",
+    },
+    {
+      icon: <FaHeartbeat />,
+      title: "Final Expense Insurance",
+      desc: "Cover funeral costs, medical bills, and end-of-life expenses with simple, affordable plans that ease the financial burden on your loved ones.",
+      link: "/services#finalexpense",
+    },
+  ];
 
 
   const data = [
@@ -87,34 +77,6 @@ function Home() {
     }
   ];
 
-
-
-  const healthIns = [
-    {
-      icon: <FaPlus />,
-      title: "Medicare Plans",
-      desc: "Find the right coverage for seniors with Medicare Part B, Part D, and Medicare Advantage plans tailored to your healthcare needs.",
-      link: "/services#medicare"
-    },
-    {
-      icon: <FaShoppingCart />,
-      title: "ACA Marketplace Plans",
-      desc: "Access affordable health insurance through ACA Marketplace plans with essential benefits, preventive care, and financial assistance.",
-      link: "/services#aca"
-    },
-    {
-      icon: <FaBook />,
-      title: "Life Insurance",
-      desc: "Protect your family’s financial future with flexible life insurance plans designed to cover income loss, debts, and long-term needs.",
-      link: "/services#lifeinsurance"
-    },
-    {
-      icon: <FaHeartbeat />,
-      title: "Final Expense Insurance",
-      desc: "Cover funeral costs, medical bills, and end-of-life expenses with simple, affordable plans that ease the financial burden on your loved ones.",
-      link: "/services#finalexpense"
-    }
-  ];
 
 
   const whyInsurance = [
@@ -678,21 +640,18 @@ function Home() {
               <div
                 key={i}
                 className={styles.card}
-                onClick={() => handleNavigate(item.link)} // whole card clickable
+                onClick={() => handleNavigate(item.link)}
               >
-                <div className={styles.iconss}>
-                  {item.icon}
-                </div>
+                <div className={styles.iconss}>{item.icon}</div>
 
                 <h3>{item.title}</h3>
                 <p className="fs-6">{item.desc}</p>
 
                 <div className={styles.btnGroup}>
-
                   <button
                     className={styles.primaryBtnn}
                     onClick={(e) => {
-                      e.stopPropagation(); // prevent card click
+                      e.stopPropagation();
                       handleNavigate(item.link);
                     }}
                   >
@@ -702,13 +661,12 @@ function Home() {
                   <button
                     className={styles.secondaryBtnn}
                     onClick={(e) => {
-                      e.stopPropagation(); // prevent card click
+                      e.stopPropagation();
                       handleQuote();
                     }}
                   >
                     Get a Quote
                   </button>
-
                 </div>
               </div>
             ))}
