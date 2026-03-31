@@ -4,6 +4,7 @@ import { HiChatBubbleLeftRight } from "react-icons/hi2";
 import { PiWarningBold } from "react-icons/pi";
 import Frequently_Asked_Question from "../components/Frequently-Asked-Question";
 import SEO from "../components/SEO";
+import ScrollToTop from "../components/ScrollToTop";
 
 function Contact() {
   const handleCall = (number) => {
@@ -20,12 +21,15 @@ function Contact() {
 
   return (
     <>
-     
-     <SEO
-  title="Contact Vemtek Insurance"
-  description="Get in touch with our insurance experts for personalized support."
-  url="https://vemtek-insurance.onrender.com/contact"
-/>
+
+      <SEO
+        title="Contact Vemtek Insurance"
+        description="Get in touch with our insurance experts for personalized support."
+        url="https://vemtek-insurance.onrender.com/contact"
+      />
+
+      <ScrollToTop/>
+
 
       <section className={styles.contactPage}>
 
@@ -156,7 +160,7 @@ function Contact() {
                 Call Now
               </button>
 
-            
+
             </div>
 
             {/* AGENTS */}

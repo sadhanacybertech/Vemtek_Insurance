@@ -13,33 +13,55 @@ import { HiOutlineCalendarDays } from "react-icons/hi2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SEO from "../components/SEO";
+import ScrollToTop from "../components/ScrollToTop";
 function Home() {
-    const navigate = useNavigate();
-  const location = useLocation();
 
-  useEffect(() => {
-    if (location.hash) {
-      const el = document.querySelector(location.hash);
 
-      if (el) {
-        // wait for layout to stabilize
-        requestAnimationFrame(() => {
-          const navbar = document.querySelector("header"); // or your navbar class
-          const offset = navbar ? navbar.offsetHeight : 80;
+  const navigate = useNavigate();
 
-          const y =
-            el.getBoundingClientRect().top +
-            window.pageYOffset -
-            offset;
+  const handleNavigate = (link) => {
+    navigate(link);
+  };
 
-          window.scrollTo({
-            top: y,
-            behavior: "smooth",
-          });
-        });
+  const handleQuote = () => {
+    navigate("/contact");
+  };
+
+
+  const Services = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+      // 🔥 disable default browser scroll restoration
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
       }
-    }
-  }, [location.hash]);
+
+      const scrollToSection = () => {
+        if (location.hash) {
+          const el = document.querySelector(location.hash);
+
+          if (el) {
+            const yOffset = -80;
+            const y =
+              el.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
+
+            window.scrollTo({
+              top: y,
+              behavior: "smooth", // ✅ now it will be smooth
+            });
+          }
+        }
+      };
+
+      // small delay ensures DOM fully ready
+      const timer = setTimeout(scrollToSection, 150);
+
+      return () => clearTimeout(timer);
+    }, [location]);
+  };
 
 
   const data = [
@@ -181,6 +203,9 @@ function Home() {
         description="Compare and buy affordable health insurance plans with expert guidance and fast claim support."
         url="https://vemtek-insurance.onrender.com/"
       />
+
+      <ScrollToTop />
+
 
 
       {/* hero section start  */}
@@ -650,8 +675,11 @@ function Home() {
           {/* CARDS */}
           <div className={styles.gridd}>
             {healthIns.map((item, i) => (
-              <div key={i} className={styles.card}>
-
+              <div
+                key={i}
+                className={styles.card}
+                onClick={() => handleNavigate(item.link)} // whole card clickable
+              >
                 <div className={styles.iconss}>
                   {item.icon}
                 </div>
@@ -663,20 +691,25 @@ function Home() {
 
                   <button
                     className={styles.primaryBtnn}
-                    onClick={() => navigate(item.link)}
+                    onClick={(e) => {
+                      e.stopPropagation(); // prevent card click
+                      handleNavigate(item.link);
+                    }}
                   >
                     Get Details →
                   </button>
 
                   <button
                     className={styles.secondaryBtnn}
-                    onClick={() => window.location.href = "/contact"}
+                    onClick={(e) => {
+                      e.stopPropagation(); // prevent card click
+                      handleQuote();
+                    }}
                   >
                     Get a Quote
                   </button>
 
                 </div>
-
               </div>
             ))}
           </div>

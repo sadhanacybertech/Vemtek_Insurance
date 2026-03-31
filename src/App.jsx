@@ -20,7 +20,6 @@ function App() {
     <Router>
       <BackToTop/>
       <CustomNavbar />
-      <ScrollToTop/>
 
      <main>
        <Routes>

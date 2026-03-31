@@ -46,7 +46,7 @@ function Header() {
           expand="lg"
           expanded={expanded}
           fixed="top"
-          className={`shadow-sm border border-bottom  ${styles.navbar}`}
+          className={`shadow-sm border border-bottom header ${styles.navbar}`}
         >
           <Container className="px-4">
 

@@ -5,6 +5,7 @@ import { HiOutlineCalendarDays } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { GiCheckMark } from "react-icons/gi";
 import SEO from "../components/SEO";
+import ScrollToTop from "../components/ScrollToTop";
 function About() {
 
   const values = [
@@ -38,6 +39,9 @@ function About() {
   description="Learn about Vemtek Insurance and our mission to provide reliable health coverage."
   url="https://vemtek-insurance.onrender.com/about"
 />
+
+      <ScrollToTop/>
+  
 
       <section className={styles.hero}>
 
