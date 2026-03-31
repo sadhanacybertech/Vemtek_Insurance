@@ -35,7 +35,7 @@ function Contact() {
 
         {/* HERO */}
         <div className={styles.hero}>
-          <h1>We're Here to Help You</h1>
+          <h1 className="text-white">We're Here to Help You</h1>
 
           <p>
             Get instant support from our licensed agents. Available 24/7 with

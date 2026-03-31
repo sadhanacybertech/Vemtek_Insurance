@@ -193,6 +193,8 @@ function Services() {
         </div>
       </section>
 
+
+      {/* Our Health Insurance Solutions   */}
       <section className={`${styles.sectionn} border-top border-bottom`} id="medicare">
         <div className="container">
 
@@ -241,7 +243,7 @@ function Services() {
 
 
 
-                <div className={styles.badges}>
+                <div className={` ${styles.badges} my-5`}>
                   <div className={styles.badgeItem}>
                     <FaShieldAlt className={styles.icon} />
                     <span>Medicare Experts</span>
@@ -299,7 +301,7 @@ function Services() {
             <div className="col-lg-6">
               <div className={styles.acaContentBox}>
 
-                <span className={styles.acaBadge}>ACA Marketplace</span>
+                <span className={`badge ${styles.acaBadge} my-3`}>ACA Marketplace</span>
 
                 <h2>
                   Affordable Health Coverage for Everyone
@@ -434,7 +436,7 @@ function Services() {
             <div className="col-lg-6">
               <div className={styles.acaContentBox}>
 
-                <span className={styles.acaBadge}>Final Expense Insurance</span>
+                <span className={`badge ${styles.acaBadge} my-3`}>Final Expense Insurance</span>
 
                 <h2>
                   Affordable Final Expense Coverage for Peace of Mind

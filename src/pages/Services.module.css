@@ -505,7 +505,7 @@
 /* Small tablets */
 @media (max-width: 768px) {
   .headingg h2 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .medicare {
@@ -553,11 +553,11 @@
 /* Extra small */
 @media (max-width: 400px) {
   .headingg h2 {
-    font-size: 24px;
+    font-size: 35px;
   }
 
   .medicare {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
