@@ -12,8 +12,7 @@ import { HiBars3 } from "react-icons/hi2";
 
 import logo from "../assets/Vemtek-insurance-logo.jpeg";
 import usa from "../assets/icons/usa.png";
-import india from "../assets/icons/india.png";
-import uk from "../assets/icons/uk.png";
+
 
 import styles from "./Header.module.css";
 
@@ -27,9 +26,26 @@ function Header() {
   });
 
   const countries = [
-    { name: "USA", flag: usa },
-    { name: "India", flag: india },
-    { name: "UK", flag: uk }
+    { name: "USA" },
+    { name: "Alabama" },
+    { name: "California" },
+    { name: "Florida" },
+    { name: "Georgia" },
+    { name: "Illinois" },
+    { name: "Indiana" },
+    { name: "Maryland" },
+    { name: "Mississippi" },
+    { name: "Missouri" },
+    { name: "North Carolina" },
+    { name: "Ohio" },
+    { name: "Oklahoma" },
+    { name: "Pennsylvania" },
+    { name: "South Carolina" },
+    { name: "Tennessee" },
+    { name: "Texas" },
+    { name: "West Virginia" },
+    { name: "Wisconsin" },
+    { name: "Arizona" },
   ];
 
   const handleCountry = (c) => {
@@ -61,21 +77,22 @@ function Header() {
               {/* COUNTRY */}
               <Dropdown>
                 <Dropdown.Toggle className={styles.countryBtnMobileTop}>
-                  <img src={country.flag} alt="" className={styles.flag} />
-                  {country.name}
+                  <img src={usa} alt="" className={styles.flag} />
+                  USA
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu className={styles.dropdownMenu}>
-                  {countries.map((c, i) => (
-                    <Dropdown.Item
-                      key={i}
-                      className={styles.dropdownItem}
-                      onClick={() => handleCountry(c)}
-                    >
-                      <img src={c.flag} alt="" className={styles.flag} />
-                      {c.name}
-                    </Dropdown.Item>
-                  ))}
+                  {countries
+                    .filter((c) => c.name !== "USA") 
+                    .map((c, i) => (
+                      <Dropdown.Item
+                        key={i}
+                        className={styles.dropdownItem}
+                        onClick={(e) => e.preventDefault()} 
+                      >
+                        {c.name}
+                      </Dropdown.Item>
+                    ))}
                 </Dropdown.Menu>
               </Dropdown>
 
@@ -124,22 +141,25 @@ function Header() {
                   onMouseLeave={() => setShow(false)}
                   show={show}
                 >
+                  {/* BUTTON */}
                   <Dropdown.Toggle className={styles.countryBtn}>
-                    <img src={country.flag} alt="" className={styles.flag} />
-                    {country.name}
+                    <img src={usa} alt="usa" className={styles.flag} />
+                    USA
                   </Dropdown.Toggle>
 
+                  {/* MENU */}
                   <Dropdown.Menu className={styles.dropdownMenu}>
-                    {countries.map((c, i) => (
-                      <Dropdown.Item
-                        key={i}
-                        className={styles.dropdownItem}
-                        onClick={() => handleCountry(c)}
-                      >
-                        <img src={c.flag} alt="" className={styles.flag} />
-                        {c.name}
-                      </Dropdown.Item>
-                    ))}
+                    {countries
+                      .filter((c) => c.name !== "USA")
+                      .map((c, i) => (
+                        <Dropdown.Item
+                          key={i}
+                          className={styles.dropdownItem}
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          {c.name}
+                        </Dropdown.Item>
+                      ))}
                   </Dropdown.Menu>
                 </Dropdown>
 
