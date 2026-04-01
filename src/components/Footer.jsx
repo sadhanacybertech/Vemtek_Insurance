@@ -90,10 +90,11 @@ function Footer() {
           <Col lg={2} md={6}>
             <h3 className={styles.heading}>Our Services</h3>
             <ul className={styles.links}>
-              <li>Life Insurance</li>
-              <li>Health Insurance</li>
-              <li>Medicare Plans</li>
-              <li>Family Coverage</li>
+              <li className="text-muted">Medicare Plans</li>
+              <li className="text-muted">ACA Marketplace Plans</li>
+              <li className="text-muted">Life Insurance</li>
+              <li className="text-muted">Final Expense Insurance</li>
+              <li className="text-muted">Health Insurance</li>
             </ul>
           </Col>
 
